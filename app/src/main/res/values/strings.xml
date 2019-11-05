@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">AROMS</string>
+    <string name="Select_type">Select type</string>
 </resources>
