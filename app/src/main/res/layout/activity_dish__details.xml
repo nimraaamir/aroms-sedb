@@ -9,7 +9,7 @@
     <androidx.appcompat.widget.AppCompatImageView
         android:layout_width="match_parent"
         android:layout_height="250dp"
-        android:src="@drawable/chicken_karhai"
+        android:src="@drawable/cherry_pie_slice_small"
         />
     <TextView
         android:layout_width="wrap_content"

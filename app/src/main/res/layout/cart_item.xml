@@ -19,7 +19,7 @@
                 android:id="@+id/cart_product_img"
                 android:layout_width="200dp"
                 android:layout_height="200dp"
-                android:src="@drawable/chicken_karhai"/>
+                android:src="@drawable/cherry_pie_slice_small"/>
 
             <LinearLayout
                 android:layout_width="match_parent"
