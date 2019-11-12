@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:background="@drawable/b3"
+    >
+
+    <Button
+        android:id="@+id/button2"
+        style="@style/AppTheme.Button"
+        android:layout_width="match_parent"
+        android:layout_height="76dp"
+        android:layout_below="@+id/textView"
+        android:layout_marginTop="7dp"
+        android:text="View Tables"
+        android:textAlignment="center"
+
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="24dp"
+        android:layout_weight="1"
+        android:fontFamily="@font/poppins"
+        android:text="Hall Manager"
+        android:textAlignment="center"
+        android:textColor="@color/colorWhite"
+
+        android:textSize="40dp"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/waiters"
+        style="@style/AppTheme.Button"
+        android:layout_width="match_parent"
+        android:layout_height="76dp"
+        android:layout_below="@+id/button2"
+        android:layout_marginTop="10dp"
+        android:text="Assign Waiters"
+        android:textAlignment="center"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/assign_tablet"
+        style="@style/AppTheme.Button"
+        android:layout_width="match_parent"
+        android:layout_height="76dp"
+        android:layout_below="@+id/waiters"
+        android:layout_marginTop="25dp"
+        android:text="Assign Tablets"
+        android:textAlignment="center"
+        android:textStyle="bold"
+
+        />
+
+    <Button
+        android:id="@+id/ready_to_serve"
+        style="@style/AppTheme.Button"
+        android:layout_width="match_parent"
+        android:layout_height="76dp"
+        android:layout_below="@+id/assign_tablet"
+        android:layout_marginTop="14dp"
+        android:text="Ready to Serve"
+        android:textAlignment="center"
+        android:textStyle="bold"
+
+        />
+
+    <Button
+        android:id="@+id/threshold"
+        style="@style/AppTheme.Button"
+        android:layout_width="match_parent"
+        android:layout_height="76dp"
+        android:layout_below="@+id/payment_status"
+        android:layout_marginTop="15dp"
+        android:text="Threshold for menu"
+        android:textAlignment="center"
+        android:textStyle="bold"
+
+        />
+
+    <Button
+        android:id="@+id/payment_status"
+        style="@style/AppTheme.Button"
+        android:layout_width="match_parent"
+        android:layout_height="76dp"
+        android:layout_below="@+id/ready_to_serve"
+        android:layout_marginTop="6dp"
+        android:text="Payment Status"
+        android:textAlignment="center"
+        android:textStyle="bold"
+
+        />
+</RelativeLayout>
