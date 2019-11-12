@@ -4,7 +4,6 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/AROMS.iml" filepath="$PROJECT_DIR$/AROMS.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/aroms-sedb.iml" filepath="$PROJECT_DIR$/.idea/aroms-sedb.iml" />
     </modules>
   </component>
 </project>
