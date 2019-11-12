@@ -22,8 +22,7 @@
             </intent-filter>
         </activity>
       
-        <activity android:name=".add_user">
-        </activity>
+
         <activity android:name=".edit_dish">
             
         </activity>
@@ -45,9 +44,7 @@
         <activity android:name=".inventory">
             
         </activity>
-        <activity android:name=".MainActivity">
-            
-        </activity>
+     
 
         <meta-data
             android:name="preloaded_fonts"
