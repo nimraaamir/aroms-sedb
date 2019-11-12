@@ -9,6 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".assign_role">
+        </activity>
         <activity android:name=".SalesReport"></activity>
         <activity android:name=".MainActivity" />
         <activity android:name=".add_user"> </activity>
@@ -18,6 +20,33 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+      
+        <activity android:name=".add_user">
+        </activity>
+        <activity android:name=".edit_dish">
+            
+        </activity>
+        <activity android:name=".add_dish_ingredient">
+            
+        </activity>
+        <activity android:name=".add_menu">
+            
+        </activity>
+        <activity android:name=".menu">
+            
+        </activity>
+        <activity android:name=".edit_inventory">
+            
+        </activity>
+        <activity android:name=".add_inventory">
+            
+        </activity>
+        <activity android:name=".inventory">
+            
+        </activity>
+        <activity android:name=".MainActivity">
+            
         </activity>
 
         <meta-data

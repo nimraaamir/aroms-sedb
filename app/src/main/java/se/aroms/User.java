@@ -80,7 +80,3 @@ public class User implements Serializable {
         this.dob = dob;
     }
 
-
-
-
-}
