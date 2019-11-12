@@ -64,7 +64,9 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/add_inventory_name" />
+                app:layout_constraintTop_toBottomOf="@+id/add_inventory_name"
+                android:layout_marginLeft="62dp"
+                android:layout_marginRight="59dp" />
 
 
             <EditText
@@ -81,7 +83,9 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/add_inventory_quantity" />
+                app:layout_constraintTop_toBottomOf="@+id/add_inventory_quantity"
+                android:layout_marginLeft="62dp"
+                android:layout_marginRight="59dp" />
 
             <EditText
                 android:id="@+id/add_user_email"
@@ -97,7 +101,9 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/add_inventory_threshold" />
+                app:layout_constraintTop_toBottomOf="@+id/add_inventory_threshold"
+                android:layout_marginLeft="62dp"
+                android:layout_marginRight="59dp" />
 
             <EditText
                 android:id="@+id/add_user_password"
@@ -113,7 +119,9 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/add_user_email" />
+                app:layout_constraintTop_toBottomOf="@+id/add_user_email"
+                android:layout_marginLeft="62dp"
+                android:layout_marginRight="59dp" />
 
             <EditText
                 android:id="@+id/add_user_dob"
@@ -129,7 +137,9 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/add_user_password" />
+                app:layout_constraintTop_toBottomOf="@+id/add_user_password"
+                android:layout_marginLeft="62dp"
+                android:layout_marginRight="59dp" />
 
             <!--<CheckBox-->
                 <!--android:id="@+id/add_user_admin"-->
@@ -155,7 +165,7 @@
                 android:layout_marginStart="40dp"
                 android:layout_marginTop="24dp"
                 android:layout_marginEnd="40dp"
-                android:entries="@array/roles_arr"
+                android:entries="@array/Persons"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
@@ -181,7 +191,7 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/edit_dish_spinner"
+                    app:layout_constraintTop_toBottomOf="@+id/add_user_role"
                     app:layout_constraintVertical_bias="0.095" />
 
                 <ProgressBar
@@ -195,3 +205,4 @@
         </LinearLayout>
     </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>
+

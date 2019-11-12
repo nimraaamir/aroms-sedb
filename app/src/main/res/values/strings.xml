@@ -1,25 +1,21 @@
 <resources>
-    <string name="app_name">SE Project</string>
-    <string name="Select_type">Select type</string>
-    <string-array name="roles_arr">
-        <item>Select role</item>
-        <item>Waiter</item>
-        <item>Chef</item>
-        <item>Manager</item>
-        <item>Hall manager</item>
-        <item>Kitchen manager</item>
+
+    <string name="app_name">AROMS</string>
+
+    <string-array name="Persons">
         <item>Inventory Manager</item>
+        <item>Kitchen Manager</item>
+        <item>Hall Manager</item>
         <item>Admin</item>
     </string-array>
 
-    <string-array name="menu_arr">
-        <item>Select dish type</item>
-        <item>Dessert</item>
-        <item>Desi</item>
-        <item>Beverage</item>
-        <item>Italian</item>
-        <item>Chinese</item>
-        <item>Extras</item>
-        <item>Starter</item>
+    <string-array name="Months">
+        <item>January,2019</item>
+        <item>February,2019</item>
+        <item>March,2019</item>
+        <item>April,2019</item>
+        <item>May,2019</item>
+        <item>June,2019</item>
     </string-array>
+
 </resources>
