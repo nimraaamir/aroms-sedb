@@ -6,8 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".SalesReport"
     android:id="@+id/salesLayout"
-    android:background="@drawable/background_1"
-    >
+    android:background="@drawable/background_1">
     <TextView
         android:id="@+id/actionbar"
         android:layout_width="match_parent"

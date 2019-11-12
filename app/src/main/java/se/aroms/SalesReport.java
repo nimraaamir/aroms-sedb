@@ -12,8 +12,8 @@ public class SalesReport extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sales_report);
-//        View bg = findViewById(R.id.salesLayout);
-//        Drawable backgroundImg = bg.getBackground();
-//        backgroundImg.setAlpha(200);
+        View bg = findViewById(R.id.salesLayout);
+        Drawable backgroundImg = bg.getBackground();
+        backgroundImg.setAlpha(200);
     }
 }
