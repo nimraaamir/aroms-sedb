@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -35,7 +35,7 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <EditText
-                android:id="@+id/editText"
+                android:id="@+id/add_inventory_name"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_marginStart="59dp"
@@ -51,7 +51,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/textView" />
 
             <EditText
-                android:id="@+id/editText2"
+                android:id="@+id/add_inventory_quantity"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_marginStart="62dp"
@@ -64,11 +64,11 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/editText" />
+                app:layout_constraintTop_toBottomOf="@+id/add_inventory_name" />
 
 
             <EditText
-                android:id="@+id/editText3"
+                android:id="@+id/add_inventory_threshold"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_marginStart="62dp"
@@ -81,10 +81,10 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/editText2" />
+                app:layout_constraintTop_toBottomOf="@+id/add_inventory_quantity" />
 
             <EditText
-                android:id="@+id/editText4"
+                android:id="@+id/add_user_email"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_marginStart="62dp"
@@ -97,10 +97,10 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/editText3" />
+                app:layout_constraintTop_toBottomOf="@+id/add_inventory_threshold" />
 
             <EditText
-                android:id="@+id/editText5"
+                android:id="@+id/add_user_password"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_marginStart="62dp"
@@ -113,10 +113,10 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/editText4" />
+                app:layout_constraintTop_toBottomOf="@+id/add_user_email" />
 
             <EditText
-                android:id="@+id/editText6"
+                android:id="@+id/add_user_dob"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_marginStart="62dp"
@@ -129,43 +129,69 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/editText5" />
+                app:layout_constraintTop_toBottomOf="@+id/add_user_password" />
 
-            <CheckBox
-                android:id="@+id/radioButton"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="62dp"
-                android:layout_marginTop="24dp"
-                android:layout_marginEnd="59dp"
-                android:ems="10"
-                android:gravity="center_horizontal"
-                android:text="Make Admin?"
-                android:textSize="18sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/editText6" />
+            <!--<CheckBox-->
+                <!--android:id="@+id/add_user_admin"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_marginStart="62dp"-->
+                <!--android:layout_marginTop="24dp"-->
+                <!--android:layout_marginEnd="59dp"-->
+                <!--android:ems="10"-->
+                <!--android:gravity="center_horizontal"-->
+                <!--android:text="Make Admin?"-->
+                <!--android:textSize="18sp"-->
+                <!--app:layout_constraintEnd_toEndOf="parent"-->
+                <!--app:layout_constraintHorizontal_bias="0.0"-->
+                <!--app:layout_constraintStart_toStartOf="parent"-->
+                <!--app:layout_constraintTop_toBottomOf="@+id/add_user_dob" />-->
 
-            <Button
-                android:id="@+id/M_add"
+
+            <Spinner
+                android:id="@+id/add_user_role"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_marginStart="40dp"
-                android:layout_marginTop="28dp"
+                android:layout_marginTop="24dp"
                 android:layout_marginEnd="40dp"
-                android:layout_marginBottom="76dp"
-                android:fontFamily="@font/poppins"
-                android:text="Next"
-                android:theme="@style/AppTheme.Button"
-                app:layout_constraintBottom_toBottomOf="parent"
+                android:entries="@array/roles_arr"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/spinner"
-                app:layout_constraintVertical_bias="0.095" />
+                app:layout_constraintTop_toBottomOf="@+id/add_user_email" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/add_inventory_btn"
+                    android:layout_width="250dp"
+                    android:layout_height="50dp"
+
+                    android:layout_marginLeft="70dp"
+                    android:fontFamily="@font/poppins"
+                    android:onClick="onClickBtn"
+                    android:text="Next"
+                    android:theme="@style/AppTheme.Button"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/edit_dish_spinner"
+                    app:layout_constraintVertical_bias="0.095" />
+
+                <ProgressBar
+                    android:id="@+id/add_user_progressBar"
+                    style="?android:attr/progressBarStyle"
+                    android:layout_width="66dp"
+                    android:visibility="invisible"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
 
         </LinearLayout>
     </ScrollView>
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+</android.support.constraint.ConstraintLayout>

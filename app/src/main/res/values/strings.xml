@@ -1,4 +1,25 @@
 <resources>
-    <string name="app_name">AROMS</string>
+    <string name="app_name">SE Project</string>
     <string name="Select_type">Select type</string>
+    <string-array name="roles_arr">
+        <item>Select role</item>
+        <item>Waiter</item>
+        <item>Chef</item>
+        <item>Manager</item>
+        <item>Hall manager</item>
+        <item>Kitchen manager</item>
+        <item>Inventory Manager</item>
+        <item>Admin</item>
+    </string-array>
+
+    <string-array name="menu_arr">
+        <item>Select dish type</item>
+        <item>Dessert</item>
+        <item>Desi</item>
+        <item>Beverage</item>
+        <item>Italian</item>
+        <item>Chinese</item>
+        <item>Extras</item>
+        <item>Starter</item>
+    </string-array>
 </resources>
