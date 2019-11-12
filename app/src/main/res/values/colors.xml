@@ -2,6 +2,18 @@
 <resources>
     <color name="colorPrimary">#008577</color>
     <color name="colorPrimaryDark">#00574B</color>
+
     <color name="colorAccent">#D81B60</color>
-    <color name="holo_orange_dark">#ffff8800</color>
+    <color name="custombar">#ffcc0000</color>
+    <color name="indicator">#EABA0A0F</color>
+    <color name="tabbackground">#FB9A040A</color>
+    <color name="cast_expanded_controller_ad_label_background_color">#ffcc0000</color>
+    <color name="bluedark">#2F333F</color>
+    <color name="bluelight">#49ACD5</color>
+    <color name="green">#45BC62</color>
+    <color name="orange">#eaad43</color>
+    <color name="white">#FFFFFF</color>
+
+    <color name="red">#CC0000</color>
+    <color name="black">#000000</color>
 </resources>
