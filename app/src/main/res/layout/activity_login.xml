@@ -5,7 +5,7 @@
     android:id="@+id/login_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background_1"
+    android:background="@drawable/background_2"
     tools:context=".Login">
 
 
@@ -26,7 +26,7 @@
         android:drawableLeft="@drawable/ic_person_black_24dp"
         android:drawablePadding="10dp"
         android:ems="10"
-        android:hint="Name"
+        android:hint="Email"
         android:inputType="textPersonName"
         android:theme="@style/AppTheme.EditText"
         app:layout_constraintBottom_toBottomOf="parent"
