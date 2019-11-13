@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">SEProject</string>
+    <string name="kitchen_manager">Kitchen Manager</string>
+    <string name="x2">x2</string>
+    <string name="change_status">Change Status</string>
+    <string name="order_number">Order Number:</string>
+    <string name="being_cooked">Being Cooked</string>
+    <string name="_1">1</string>
+    <string name="number">#</string>
+    <string name="waiting">Waiting</string>
+    <string name="honey_wings">Honey Wings</string>
+    <string name="order_number">Order Number:</string>
+    <string name="x4">x4</string>
+    <string name="hotnsour_soup">HotnSour Soup</string>
+    <string name="_1">1</string>
+    <string name="type">Type</string>
+</resources>
