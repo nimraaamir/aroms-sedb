@@ -38,6 +38,9 @@ dependencies {
     implementation 'com.google.firebase:firebase-auth:19.1.0'
     implementation 'com.google.firebase:firebase-database:19.1.0'
     implementation 'com.google.firebase:firebase-firestore:21.2.1'
+    implementation "androidx.recyclerview:recyclerview:$recyclerview_version"
+    def cardview_version = "1.0.0"
+    implementation "androidx.cardview:cardview:$cardview_version"
 }
 
 apply plugin: 'com.google.gms.google-services'

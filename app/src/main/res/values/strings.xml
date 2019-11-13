@@ -1,7 +1,7 @@
 <resources>
 
     <string name="app_name">AROMS</string>
-
+	<string name="menue">Menu</string>
     <string-array name="Persons">
         <item>Inventory Manager</item>
         <item>Kitchen Manager</item>
