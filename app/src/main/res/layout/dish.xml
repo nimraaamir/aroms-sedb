@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <androidx.cardview.widget.CardView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:elevation="100sp"
+        >
+<androidx.appcompat.widget.AppCompatImageView
+    android:layout_width="wrap_content"
+    android:layout_height="250dp"
+    android:id="@+id/dish_img"
+    android:src="@drawable/cherry_pie_slice_small"
+    />
+    <TextView
+        android:fontFamily="@font/poppins"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/dish_title"
+        android:text="Chicken Karahi"
+        android:layout_gravity="center"
+        android:textSize="28dp"
+
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Cook time: 45 mints"
+        android:layout_gravity="center"
+        android:textSize="28dp"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Price :500/kg"
+        android:layout_gravity="center"
+        android:textSize="28dp"
+        android:id="@+id/dish_price"
+        />
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="28dp"
+        android:text="Add to Cart"
+        android:theme="@style/AppTheme.Button"
+        />
+    </androidx.cardview.widget.CardView>
+</LinearLayout>
