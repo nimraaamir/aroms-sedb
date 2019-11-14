@@ -3,14 +3,7 @@ package se.aroms;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
 import android.os.Bundle;
-//import androidx.widget.LinearLayoutManager;
-//import androidx.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,12 +11,20 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.firebase.FirebaseApp;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
+
+//import androidx.widget.LinearLayoutManager;
+//import androidx.RecyclerView;
 
 public class inventory extends AppCompatActivity {
 
@@ -120,6 +121,8 @@ public class inventory extends AppCompatActivity {
             if (Integer.parseInt(a.getQuantity())< Integer.parseInt(a.getThreshold())){
                 quantity.setTextColor(Color.RED);
             }
+            else{quantity.setTextColor(Color.GREEN);}
+
 
             mainLayout.setOnClickListener(new View.OnClickListener() {
                 @Override

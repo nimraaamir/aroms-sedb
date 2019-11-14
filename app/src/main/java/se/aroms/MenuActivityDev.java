@@ -1,12 +1,11 @@
 package se.aroms;
 
-import androidx.appcompat.app.AppCompatActivity;
-
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
 import android.content.Intent;
 import android.os.Bundle;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 
@@ -19,7 +18,7 @@ public class MenuActivityDev extends AppCompatActivity implements adapter_for_di
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menudev);
-        getSupportActionBar().hide();
+        //getSupportActionBar().hide();
         //Toast.makeText(this,"Hi",Toast.LENGTH_LONG).show();
 //        Intent intent=new Intent(MainActivity.this, Dishes.class);
 //        startActivity(intent);

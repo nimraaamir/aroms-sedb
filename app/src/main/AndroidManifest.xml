@@ -21,8 +21,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".kitchenManagerCancel"/>
+        <activity android:name=".cookMain"/>
+        <activity android:name=".kitchenManagerStatus"/>
 		<activity android:name=".MenuActivityDev"/>
 		<activity android:name=".MyOrders" />
+        <activity android:name=".kitchenManagerMain"/>
         <activity android:name=".Dish_Details" />
         <activity android:name=".Cart" />
         <activity android:name=".Dishes" />

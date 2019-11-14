@@ -52,52 +52,82 @@ public class Login extends AppCompatActivity {
     }
 
 
-    private void loginAuthenticate(){
+    private void loginAuthenticate() {
         String emailTxt = email.getText().toString();
         String passwordTxt = password.getText().toString();
-        mAuth.signInWithEmailAndPassword(emailTxt, passwordTxt)
-                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
-                    @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
-                        if (task.isSuccessful()) {
-                            // Sign in success, update UI with the signed-in user's information
-                            Log.d("Message: ", "createUserWithEmail:success");
-                            FirebaseUser user = mAuth.getCurrentUser();
-                            uid = user.getUid();
-//                            Intent intent = new Intent(getBaseContext(), add_user.class);
-//                            startActivity(intent);
+        boolean isFill = false;
+        if (emailTxt.isEmpty()) {
+            email.setError("Fill this field");
+            isFill = true;
+        }
+        if (passwordTxt.isEmpty()) {
+            password.setError("Fill this field");
+            isFill = true;
+        }
+        if (!isFill) {
+            mAuth.signInWithEmailAndPassword(emailTxt, passwordTxt)
+                    .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+                        @Override
+                        public void onComplete(@NonNull Task<AuthResult> task) {
+                            if (task.isSuccessful()) {
+                                // Sign in success, update UI with the signed-in user's information
+                                Log.d("Message: ", "createUserWithEmail:success");
+                                FirebaseUser user = mAuth.getCurrentUser();
+                                uid = user.getUid();
 
-                        } else {
-                            // If sign in fails, display a message to the user.
-                            Toast.makeText(Login.this, "Authentication Failed",
-                                    Toast.LENGTH_LONG).show();
+                            } else {
+                                // If sign in fails, display a message to the user.
+                                Toast.makeText(Login.this, "Authentication Failed",
+                                        Toast.LENGTH_LONG).show();
+                                uid = null;
+                            }
+
+                            if (uid != null) {
+                                databaseReference.child(uid).addValueEventListener(new ValueEventListener() {
+                                    @Override
+                                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                        User user = dataSnapshot.getValue(User.class);
+                                        String role = user.getRole();
+                                        String roleSelected = ((Spinner) findViewById(R.id.dropdown)).getSelectedItem().toString();
+                                        if (role.equals(roleSelected)) {
+                                            Toast.makeText(Login.this, "Login Successful",
+                                                    Toast.LENGTH_LONG).show();
+                                            if (roleSelected.equals("Admin")) {
+                                                Intent intent = new Intent(getBaseContext(), MainActivity.class);
+                                                startActivity(intent);
+                                            } else if (roleSelected.equals("Inventory Manager")) {
+                                                Intent intent = new Intent(getBaseContext(), inventory.class);
+                                                startActivity(intent);
+                                            } else if (roleSelected.equals("Hall Manager")) {
+
+                                            } else if (roleSelected.equals("Kitchen Manager")) {
+                                                Intent intent = new Intent(getBaseContext(), kitchenManagerMain.class);
+                                                startActivity(intent);
+                                            } else if (roleSelected.equals("Customer")) {
+                                                Intent intent = new Intent(getBaseContext(), MenuActivityDev.class);
+                                                startActivity(intent);
+                                            } else if (roleSelected.equals("Chef")){
+                                                Intent intent = new Intent(getBaseContext(), cookMain.class);
+                                                startActivity(intent);
+                                            }
+                                        } else {
+                                            Toast.makeText(Login.this, "Login Failed",
+                                                    Toast.LENGTH_LONG).show();
+                                        }
+                                    }
+
+                                    @Override
+                                    public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                                    }
+                                });
+                                // ...
+                            } else {
+                                Toast.makeText(Login.this, "No Login Found",
+                                        Toast.LENGTH_LONG).show();
+                            }
                         }
-
-                        databaseReference.child(uid).addValueEventListener(new ValueEventListener() {
-                            @Override
-                            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                                User user= dataSnapshot.getValue(User.class);
-                                String role=user.getRole();
-                                String roleSelected = ((Spinner) findViewById(R.id.dropdown)).getSelectedItem().toString();
-                                if(role.equals(roleSelected)){
-                                    Toast.makeText(Login.this, "Authentication Successful",
-                                            Toast.LENGTH_LONG).show();
-                                    Intent intent = new Intent(getBaseContext(), add_user.class);
-                                    startActivity(intent);
-                                }
-                                else {
-                                    Toast.makeText(Login.this, "Authentication Failed",
-                                            Toast.LENGTH_LONG).show();
-                                }
-                            }
-
-                            @Override
-                            public void onCancelled(@NonNull DatabaseError databaseError) {
-
-                            }
-                        });
-                        // ...
-                    }
-                });
+                    });
+        }
     }
 }

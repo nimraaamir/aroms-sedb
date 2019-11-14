@@ -1,13 +1,14 @@
 package se.aroms;
 
 import android.content.Intent;
-import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.Spinner;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.firebase.FirebaseApp;
 import com.google.firebase.database.DatabaseReference;
@@ -46,6 +47,7 @@ public class add_menu extends AppCompatActivity {
         if(!name.isEmpty()&&!reg_price.isEmpty()&&!large_price.isEmpty()&&!time.isEmpty()&&!type.equals("Select dish type")){
             String key = menuDB.push().getKey();
 
+            menuDB.child(key).child("uid").setValue(key);
             menuDB.child(key).child("name").setValue(name);
             menuDB.child(key).child("reg_price").setValue(reg_price);
             menuDB.child(key).child("large_price").setValue(large_price);

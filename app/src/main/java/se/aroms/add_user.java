@@ -1,10 +1,6 @@
 package se.aroms;
 
 import android.content.Intent;
-
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
 import android.util.Patterns;
 import android.view.View;
@@ -12,6 +8,9 @@ import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.Spinner;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -148,9 +147,7 @@ public class add_user extends AppCompatActivity {
                     Intent i = new Intent(getApplicationContext(),MainActivity.class);
                     i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                     //i.putExtra("email",a.getEmail());
-
                     startActivity(i);
-
                 }
                 else{
                     ((ProgressBar) findViewById(R.id.add_user_progressBar)).setVisibility(View.INVISIBLE);

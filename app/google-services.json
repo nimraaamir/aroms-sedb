@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "823485975050",
+    "firebase_url": "https://aroms-9adaf.firebaseio.com",
+    "project_id": "aroms-9adaf",
+    "storage_bucket": "aroms-9adaf.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:823485975050:android:572bf3ce34137a9a6f2df3",
+        "android_client_info": {
+          "package_name": "se.aroms"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "823485975050-pjuspt54ro0q9msppo1jmdnjmc8jtfud.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyApFkuRP-9AQn_sOwHjbaMnpm7qQZloGY8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "823485975050-pjuspt54ro0q9msppo1jmdnjmc8jtfud.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
