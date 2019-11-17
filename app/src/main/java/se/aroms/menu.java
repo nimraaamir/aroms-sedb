@@ -151,7 +151,10 @@ public class menu extends AppCompatActivity {
                     i.putExtra("name",a.getName());
                     i.putExtra("reg_price",a.getReg_price());
                     i.putExtra("large_price",a.getLarge_price());
+                    i.putExtra("reg_price_incurred",a.getReg_price_incurred());
+                    i.putExtra("large_price_incurred",a.getLarge_price_incurred());
                     i.putExtra("time",a.getTime());
+                    i.putExtra("description",a.getDescription());
                     i.putExtra("type",a.getType());
 
                     i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);;

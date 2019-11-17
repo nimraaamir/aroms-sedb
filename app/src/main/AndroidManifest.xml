@@ -51,6 +51,10 @@
         <activity android:name=".inventory">
             
         </activity>
+
+        <activity android:name=".inventory_manager_main_page">
+            
+        </activity>
      
 
         <meta-data

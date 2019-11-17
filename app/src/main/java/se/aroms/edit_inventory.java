@@ -36,7 +36,7 @@ public class edit_inventory extends AppCompatActivity {
             String name = i.getStringExtra("name");
             String quantity = i.getStringExtra("quantity");
             String threshold = i.getStringExtra("threshold");
-
+            //Toast.makeText(this,name,Toast.LENGTH_LONG).show();
             ((EditText)findViewById(R.id.edit_inventory_name)).setText(name);
             ((EditText)findViewById(R.id.edit_inventory_quantity)).setText(quantity);
             ((EditText)findViewById(R.id.edit_inventory_threshold)).setText(threshold);

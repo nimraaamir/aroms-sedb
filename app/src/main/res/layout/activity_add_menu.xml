@@ -64,7 +64,23 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/add_inventory_name" />
+                app:layout_constraintTop_toBottomOf="@+id/add_menu_name" />
+
+            <EditText
+                android:id="@+id/add_menu_regular_price_incurred"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginStart="62dp"
+                android:layout_marginTop="32dp"
+                android:layout_marginEnd="59dp"
+                android:ems="10"
+                android:gravity="center_horizontal"
+                android:hint="Reqular Price (incurred)"
+                android:inputType="number"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/add_menu_regular_price" />
 
 
             <EditText
@@ -81,7 +97,23 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/add_inventory_quantity" />
+                app:layout_constraintTop_toBottomOf="@+id/add_menu_regular_price_incurred" />
+
+            <EditText
+                android:id="@+id/add_menu_large_price_incurred"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginStart="62dp"
+                android:layout_marginTop="28dp"
+                android:layout_marginEnd="59dp"
+                android:ems="10"
+                android:gravity="center_horizontal"
+                android:hint="Large Price (incurred)"
+                android:inputType="number"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/add_menu_large_price" />
 
             <EditText
                 android:id="@+id/add_menu_time"
@@ -97,7 +129,23 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/add_inventory_threshold" />
+                app:layout_constraintTop_toBottomOf="@+id/add_menu_large_price" />
+
+            <EditText
+                android:id="@+id/add_menu_description"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginStart="62dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginEnd="59dp"
+                android:ems="10"
+                android:gravity="center_horizontal"
+                android:hint="Description"
+                android:inputType="text"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/add_menu_time" />
 
             <Spinner
                 android:id="@+id/add_menu_spinner"
