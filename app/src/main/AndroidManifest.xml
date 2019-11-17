@@ -14,22 +14,23 @@
         <activity android:name=".SalesReport"></activity>
         <activity android:name=".MainActivity" />
         <activity android:name=".add_user"> </activity>
-        <activity android:name=".Login">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+        <activity android:name=".Login"/>
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
         <activity android:name=".kitchenManagerCancel"/>
         <activity android:name=".cookMain"/>
         <activity android:name=".kitchenManagerStatus"/>
-		<activity android:name=".MenuActivityDev"/>
-		<activity android:name=".MyOrders" />
+		<activity android:name=".Devdroids.MenuActivityDev">
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
+
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
+        </activity>
+		<activity android:name=".Devdroids.MyOrders" />
         <activity android:name=".kitchenManagerMain"/>
-        <activity android:name=".Dish_Details" />
-        <activity android:name=".Cart" />
-        <activity android:name=".Dishes" />
+        <activity android:name=".Devdroids.Dish_Details" />
+        <activity android:name=".Devdroids.Cart" />
+        <activity android:name=".Devdroids.Dishes" />
         <activity android:name=".edit_dish">
             
         </activity>

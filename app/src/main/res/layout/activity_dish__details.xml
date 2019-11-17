@@ -4,13 +4,27 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Dish_Details"
+    tools:context=".Devdroids.Dish_Details"
     android:orientation="vertical">
-    <androidx.appcompat.widget.AppCompatImageView
+    <ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+        <androidx.appcompat.widget.AppCompatImageView
         android:layout_width="match_parent"
         android:layout_height="250dp"
+            android:id="@+id/dish_detail_img"
         android:src="@drawable/cherry_pie_slice_small"
         />
+            <ProgressBar
+                android:id="@+id/dish_detail_progress"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"/>
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -22,7 +36,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="24sp"
-        android:id="@+id/disf_detail_price"
+        android:id="@+id/dish_detail_desc"
         android:text="Chicken karahi, also known as gosht karahi, and kadai chicken, is a dish from the Indian subcontinent noted for its spicy taste; it is notable in Pakistani and North Indian cuisine."
         />
     <TextView
@@ -36,7 +50,14 @@
         android:layout_height="wrap_content"
         android:textSize="24sp"
         android:text="Rs 1000/kg"
-        android:id="@+id/dish_detail_price"
+        android:id="@+id/dish_detail_regprice"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="24sp"
+        android:text="Rs 1000/kg"
+        android:id="@+id/dish_detail_largeprice"
         />
     <TextView
         android:layout_width="wrap_content"
@@ -51,5 +72,47 @@
         android:textSize="24sp"
         android:id="@+id/dish_detail_cooktime"
         />
-
+    <RadioGroup
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/sizeRadio">
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Regular"
+            android:id="@+id/Regsize"
+            android:checked="true"
+            />
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Large"
+            android:id="@+id/Largesize"
+            android:checked="false"
+            />
+    </RadioGroup>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Quantity: "
+            />
+        <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="1"/>
+    </LinearLayout>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="28dp"
+        android:text="Add to Cart"
+        android:onClick="onClickCart"
+        android:theme="@style/AppTheme.Button"
+        />
+        </LinearLayout>
+    </ScrollView>
 </LinearLayout>
