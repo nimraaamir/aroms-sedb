@@ -25,12 +25,15 @@ public class kitchenManagerMain extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_kitchenmanager);
 
-        //Hard coded data. just get orders no need for dishes.
+        //Hard coded data. just get orders from firebase databse ...no need for dishes.
         Dishes dish = new Dishes(1,"Biryani","!0 min","300 Rs");
         ArrayList<Orders> orders = new ArrayList<>();
         Orders order = new Orders();
         order.addDishes(dish);
         orders.add(order);
+        orders.add(order);
+        orders.add(order);
+        //Hard Coded end
         adapter = new CustomRecyclerView(orders,R.layout.kitchen_manager_order_row,this);
         recyclerView = (RecyclerView) findViewById(R.id.OrderDisplay);
         recyclerView.setAdapter(adapter);

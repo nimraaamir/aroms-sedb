@@ -6,12 +6,15 @@ import java.util.List;
 
 public class Orders implements Serializable {
     private ArrayList<Dishes> dishes;
+    private String Priority;
 
     public Orders(ArrayList<Dishes> dishes) {
         this.dishes = dishes;
+        this.Priority = "Normal";
     }
     public Orders() {
         this.dishes = new ArrayList<>();
+        this.Priority = "Normal";
     }
 
     public List<Dishes> getDishes() {
@@ -22,4 +25,12 @@ public class Orders implements Serializable {
         this.dishes = dishes;
     }
     public void addDishes(Dishes dish){this.dishes.add(dish);}
+
+    public String getPriority() {
+        return Priority;
+    }
+
+    public void setPriority(String priority) {
+        Priority = priority;
+    }
 }
