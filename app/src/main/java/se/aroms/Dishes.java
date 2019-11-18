@@ -4,7 +4,9 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-public class Dishes{
+import java.io.Serializable;
+
+public class Dishes implements Serializable {
 
     private  int dish_image;
     private String dish_name;
