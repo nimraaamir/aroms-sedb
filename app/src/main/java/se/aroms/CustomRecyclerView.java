@@ -41,7 +41,7 @@ public class CustomRecyclerView extends RecyclerView.Adapter<MyViewHolder> {
     public void onBindViewHolder(@NonNull final MyViewHolder holder, final int position) {
         if(ordersList != null && holder != null){
             //bind views here like text views and image views.
-            holder.OrderNumber.setText("Order Number " + position);
+            holder.OrderNumber.setText("Order Number " + (position+1));
             holder.Specialize.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
