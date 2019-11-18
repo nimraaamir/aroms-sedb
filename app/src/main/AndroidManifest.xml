@@ -55,6 +55,14 @@
         <activity android:name=".inventory_manager_main_page">
             
         </activity>
+
+        <activity android:name=".payment"></activity>
+        <activity android:name=".ready_to_serve" />
+        <activity android:name=".waiters" />
+        <activity android:name=".tablets" />
+        <activity android:name=".View_tables" />
+        <activity android:name=".Hall_Manager_Main">
+        </activity>
      
 
         <meta-data
