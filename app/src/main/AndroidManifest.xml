@@ -14,18 +14,18 @@
         <activity android:name=".SalesReport"></activity>
         <activity android:name=".MainActivity" />
         <activity android:name=".add_user"> </activity>
-        <activity android:name=".Login"/>
-
-        <activity android:name=".kitchenManagerCancel"/>
-        <activity android:name=".cookMain"/>
-        <activity android:name=".kitchenManagerStatus"/>
-		<activity android:name=".Devdroids.MenuActivityDev">
+        <activity android:name=".Login">
         <intent-filter>
             <action android:name="android.intent.action.MAIN" />
 
             <category android:name="android.intent.category.LAUNCHER" />
         </intent-filter>
-        </activity>
+    </activity>
+        <activity android:name=".kitchenManagerCancel"/>
+        <activity android:name=".cookMain"/>
+        <activity android:name=".kitchenManagerStatus"/>
+		<activity android:name=".Devdroids.MenuActivityDev"/>
+
 		<activity android:name=".Devdroids.MyOrders" />
         <activity android:name=".kitchenManagerMain"/>
         <activity android:name=".Devdroids.Dish_Details" />

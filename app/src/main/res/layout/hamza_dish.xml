@@ -20,7 +20,7 @@
         android:layout_margin="4dp">
         <androidx.appcompat.widget.AppCompatImageView
             android:layout_width="wrap_content"
-            android:layout_height="250dp"
+            android:layout_height="200dp"
             android:id="@+id/dish_img"
             android:src="@drawable/salad_sig"
             />
@@ -31,7 +31,7 @@
             android:id="@+id/dish_title"
             android:text="Chicken salad"
             android:layout_gravity="center"
-            android:textSize="28dp"
+            android:textSize="20sp"
 
             />
         <TextView
@@ -40,13 +40,13 @@
             android:layout_height="wrap_content"
             android:text="Cook time: 45 mints"
             android:layout_gravity="center"
-            android:textSize="28dp"/>
+            android:textSize="14sp"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Price Small :500/kg"
             android:layout_gravity="center"
-            android:textSize="28dp"
+            android:textSize="14sp"
             android:id="@+id/dish_reg_price"
             />
         <TextView
@@ -54,7 +54,7 @@
             android:layout_height="wrap_content"
             android:text="Price Large :500/kg"
             android:layout_gravity="center"
-            android:textSize="28dp"
+            android:textSize="14sp"
             android:id="@+id/dish_large_price"
             />
 

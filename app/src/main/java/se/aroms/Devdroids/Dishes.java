@@ -20,11 +20,12 @@ public class Dishes implements Parcelable {
     private String type;
     private String uid;
     private List<String> img_ids;
+    private int availability;
     public Dishes()
     {
 
     }
-    public Dishes(String description, String large_price, String large_price_incurred, String name, String reg_price, String reg_price_incurred, String time, String type, String uid, List<String> img_ids) {
+    public Dishes(String description, String large_price, String large_price_incurred, String name, String reg_price, String reg_price_incurred, String time, String type, String uid, List<String> img_ids,int availability) {
         this.description = description;
         this.large_price = large_price;
         this.large_price_incurred = large_price_incurred;
@@ -35,6 +36,7 @@ public class Dishes implements Parcelable {
         this.type = type;
         this.uid = uid;
         this.img_ids = img_ids;
+        this.availability=availability;
     }
 
     public String getDescription() {
@@ -59,6 +61,14 @@ public class Dishes implements Parcelable {
 
     public void setLarge_price_incurred(String large_price_incurred) {
         this.large_price_incurred = large_price_incurred;
+    }
+
+    public int getAvailability() {
+        return availability;
+    }
+
+    public void setAvailability(int availability) {
+        this.availability = availability;
     }
 
     public String getName() {
@@ -135,6 +145,7 @@ public class Dishes implements Parcelable {
             dish.uid=source.readString();
             dish.img_ids=new ArrayList<>();
             source.readStringList(dish.img_ids);
+            dish.availability=source.readInt();
 
             return dish;
         }
@@ -156,5 +167,6 @@ public class Dishes implements Parcelable {
         dest.writeString(type);
         dest.writeString(uid);
         dest.writeStringList(img_ids);
+        dest.writeInt(availability);
     }
 }

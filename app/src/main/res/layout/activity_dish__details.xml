@@ -28,48 +28,54 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textSize="24sp"
+        android:id="@+id/dish_detail_name"
+        />
+            <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:text="Description"
-        android:textSize="32sp"
+        android:textSize="20sp"
         android:layout_marginTop="16dp"
         />
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="24sp"
+        android:textSize="14sp"
         android:id="@+id/dish_detail_desc"
         android:text="Chicken karahi, also known as gosht karahi, and kadai chicken, is a dish from the Indian subcontinent noted for its spicy taste; it is notable in Pakistani and North Indian cuisine."
         />
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="32sp"
+        android:textSize="20sp"
         android:text="Price"
         />
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="24sp"
+        android:textSize="14sp"
         android:text="Rs 1000/kg"
         android:id="@+id/dish_detail_regprice"
         />
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="24sp"
+        android:textSize="14sp"
         android:text="Rs 1000/kg"
         android:id="@+id/dish_detail_largeprice"
         />
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="32sp"
+        android:textSize="20sp"
         android:text="Cooking Time"
         />
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="45 minutes"
-        android:textSize="24sp"
+        android:textSize="14sp"
         android:id="@+id/dish_detail_cooktime"
         />
     <RadioGroup
@@ -99,16 +105,21 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Quantity: "
+            android:textSize="20sp"
             />
+
         <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="1"/>
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:singleLine="true"
+            android:textSize="20sp"
+            android:text="1" />
     </LinearLayout>
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="28dp"
+        android:textSize="20sp"
         android:text="Add to Cart"
         android:onClick="onClickCart"
         android:theme="@style/AppTheme.Button"

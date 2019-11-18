@@ -16,6 +16,7 @@ import se.aroms.R;
 
 public class Dish_Details extends AppCompatActivity {
     TextView desp;
+    TextView name;
     TextView regPrice;
     TextView largePrice;
     TextView cookTime;
@@ -34,21 +35,36 @@ public class Dish_Details extends AppCompatActivity {
         cookTime=findViewById(R.id.dish_detail_cooktime);
         dish_image=findViewById(R.id.dish_detail_img);
         desp.setText(dishes.getDescription());
-        regPrice.setText(dishes.getReg_price());
-        largePrice.setText(dishes.getLarge_price());
-        cookTime.setText(dishes.getTime());
+        regPrice.setText("Regular: "+dishes.getReg_price()+"RS");
+        largePrice.setText("Large: "+dishes.getLarge_price()+"RS");
+        cookTime.setText(dishes.getTime()+" Minutes");
+        name=findViewById(R.id.dish_detail_name);
+        name.setText(dishes.getName());
+        if(dishes.getImg_ids()!=null) {
+            if(dishes.getImg_ids().size()>0) {
+                Picasso.get().load(dishes.getImg_ids().get(0)).into(dish_image, new Callback() {
+                    @Override
+                    public void onSuccess() {
+                        progressBar.setVisibility(View.GONE);
+                    }
 
-        Picasso.get().load(dishes.getImg_ids().get(0)).into(dish_image, new Callback() {
-            @Override
-            public void onSuccess() {
+                    @Override
+                    public void onError(Exception e) {
+
+                    }
+                });
+            }
+            else
+            {
                 progressBar.setVisibility(View.GONE);
+                dish_image.setImageResource(R.drawable.notavailable);
             }
-
-            @Override
-            public void onError(Exception e) {
-
-            }
-        });
+        }
+        else
+        {
+            progressBar.setVisibility(View.GONE);
+            dish_image.setImageResource(R.drawable.notavailable);
+        }
     }
     public void onClickCart(View v)
     {
