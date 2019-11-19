@@ -20,10 +20,9 @@ public class User implements Serializable {
         this.role = role;
     }
 
-    User() {
-    }
+    User(){}
 
-    public User(String name, String cnic, String telephone, String email, String password, String dob, String role) {
+    public User(String name, String cnic, String telephone, String email, String password, String dob,String role) {
         this.name = name;
         this.cnic = cnic;
         this.telephone = telephone;
@@ -80,5 +79,6 @@ public class User implements Serializable {
     public void setDob(String dob) {
         this.dob = dob;
     }
-}
 
+
+}

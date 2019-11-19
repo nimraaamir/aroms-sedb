@@ -22,7 +22,7 @@ import com.google.firebase.database.FirebaseDatabase;
 public class edit_dish extends AppCompatActivity {
 
     String uid;
-    DatabaseReference menuDB;
+    DatabaseReference menuDB,ingredientDB;
     Dialog mDialog;
 
     @Override
@@ -36,18 +36,24 @@ public class edit_dish extends AppCompatActivity {
             String name = i.getStringExtra("name");
             String reg_price = i.getStringExtra("reg_price");
             String large_price = i.getStringExtra("large_price");
+            String reg_price_incurred = i.getStringExtra("reg_price_incurred");
+            String large_price_incurred = i.getStringExtra("large_price_incurred");
+            String description = i.getStringExtra("description");
             String time = i.getStringExtra("time");
             String type = i.getStringExtra("type");
 
             ((EditText)findViewById(R.id.edit_dish_name)).setText(name);
             ((EditText)findViewById(R.id.edit_dish_regular_price)).setText(reg_price);
             ((EditText)findViewById(R.id.edit_dish_large_price)).setText(large_price);
+            ((EditText)findViewById(R.id.edit_dish_regular_price_incurred)).setText(reg_price_incurred);
+            ((EditText)findViewById(R.id.edit_dish_large_price_incurred)).setText(large_price_incurred);
             ((EditText)findViewById(R.id.edit_dish_time)).setText(time);
+            ((EditText)findViewById(R.id.edit_dish_description)).setText(description);
             ((Spinner)findViewById(R.id.edit_dish_spinner)).setSelection(((ArrayAdapter<String>)((Spinner)findViewById(R.id.edit_dish_spinner)).getAdapter()).getPosition(type));
 
             FirebaseApp.initializeApp(this);
             menuDB = FirebaseDatabase.getInstance().getReference("Menu/"+uid);
-
+            ingredientDB = FirebaseDatabase.getInstance().getReference("Ingredients/"+uid);
             (findViewById(R.id.edit_dish_delete)).setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -74,20 +80,32 @@ public class edit_dish extends AppCompatActivity {
         EditText d = (EditText) findViewById(R.id.edit_dish_time);
         String time = d.getText().toString();
 
+        EditText e = (EditText) findViewById(R.id.edit_dish_regular_price_incurred);
+        String reg_price_incurred = e.getText().toString();
+
+        EditText f = (EditText) findViewById(R.id.edit_dish_large_price_incurred);
+        String large_price_incurred = f.getText().toString();
+
+        EditText g = (EditText) findViewById(R.id.edit_dish_description);
+        String description = g.getText().toString();
+
         String type = ((Spinner) findViewById(R.id.edit_dish_spinner)).getSelectedItem().toString();
 
-        if(!name.isEmpty()&&!reg_price.isEmpty()&&!large_price.isEmpty()&&!time.isEmpty()&&!type.equals("Select dish type")){
+        if(!name.isEmpty()&&!reg_price.isEmpty()&&!large_price.isEmpty()&&!time.isEmpty()&&!type.equals("Select dish type")&&!reg_price_incurred.isEmpty()&&!large_price_incurred.isEmpty()&&!description.isEmpty()){
 
             menuDB.child("name").setValue(name);
             menuDB.child("reg_price").setValue(reg_price);
             menuDB.child("large_price").setValue(large_price);
             menuDB.child("time").setValue(time);
             menuDB.child("type").setValue(type);
+            menuDB.child("reg_price_incurred").setValue(reg_price_incurred);
+            menuDB.child("large_price_incurred").setValue(large_price_incurred);
 
-            Toast.makeText(this,"Dish added successfully",Toast.LENGTH_LONG).show();
+            Toast.makeText(this,"Dish updated successfully",Toast.LENGTH_LONG).show();
             //((ProgressBar) findViewById(R.id.add_menu_progressBar)).setVisibility(View.INVISIBLE);
             finish();
             Intent i = new Intent(getApplicationContext(),add_dish_ingredient.class);
+            i.putExtra("uid",uid);
             startActivity(i);
         }
         else{
@@ -103,6 +121,15 @@ public class edit_dish extends AppCompatActivity {
 
             if(time.isEmpty())
                 d.setError("Fill this field");
+
+            if(reg_price_incurred.isEmpty())
+                e.setError("Fill this field");
+
+            if(large_price_incurred.isEmpty())
+                f.setError("Fill this field");
+
+            if(description.isEmpty())
+                g.setError("Fill this field");
 
             if(type.equals("Select dish type"))
                 Toast.makeText(this,"Select a valid dish type",Toast.LENGTH_LONG).show();
@@ -153,6 +180,7 @@ public class edit_dish extends AppCompatActivity {
 
     public void onClickBtnDelete(){
         menuDB.removeValue();
+        ingredientDB.removeValue();
         Toast.makeText(this,"Dish deleted successfully",Toast.LENGTH_LONG).show();
         //HAVE TO ADD DELETION OF INVENTORY ITEMS
         finish();

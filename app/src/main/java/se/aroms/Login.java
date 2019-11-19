@@ -96,7 +96,7 @@ public class Login extends AppCompatActivity {
                                                 Intent intent = new Intent(getBaseContext(), MainActivity.class);
                                                 startActivity(intent);
                                             } else if (roleSelected.equals("Inventory Manager")) {
-                                                Intent intent = new Intent(getBaseContext(), inventory.class);
+                                                Intent intent = new Intent(getBaseContext(), inventory_manager_main_page.class);
                                                 startActivity(intent);
                                             } else if (roleSelected.equals("Hall Manager")) {
 
