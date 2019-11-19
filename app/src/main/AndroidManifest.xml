@@ -9,7 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".SpecializeOrder"></activity>
         <activity android:name=".SalesAndReport"></activity>
+
         <activity android:name=".assign_role"></activity>
         <activity android:name=".SalesReport" />
         <activity android:name=".MainActivity" />
@@ -29,7 +31,7 @@
         <activity android:name=".Dish_Details" />
         <activity android:name=".Cart" />
         <activity android:name=".Dishes" />
-      
+
         <activity android:name=".edit_dish"></activity>
         <activity android:name=".add_dish_ingredient"></activity>
         <activity android:name=".add_menu"></activity>
@@ -37,6 +39,7 @@
         <activity android:name=".edit_inventory"></activity>
         <activity android:name=".add_inventory"></activity>
         <activity android:name=".inventory"></activity>
+
 
         <activity android:name=".inventory_manager_main_page">
             
@@ -50,6 +53,7 @@
         <activity android:name=".Hall_Manager_Main">
         </activity>
      
+>>>>>>> development
 
         <meta-data
             android:name="preloaded_fonts"
