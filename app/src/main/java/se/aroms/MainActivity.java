@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
         ((Button)findViewById(R.id.AP_sales)).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(getApplicationContext(), SalesReport.class);
+                Intent i = new Intent(getApplicationContext(), SalesAndReport.class);
                 startActivity(i);
             }
         });
