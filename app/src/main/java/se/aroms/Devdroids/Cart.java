@@ -1,8 +1,10 @@
-package se.aroms;
+package se.aroms.Devdroids;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import se.aroms.R;
 
 public class Cart extends AppCompatActivity {
 

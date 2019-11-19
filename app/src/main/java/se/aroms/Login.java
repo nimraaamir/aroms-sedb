@@ -23,6 +23,8 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import se.aroms.Devdroids.MenuActivityDev;
+
 public class Login extends AppCompatActivity {
 
     private FirebaseAuth mAuth;
@@ -96,9 +98,11 @@ public class Login extends AppCompatActivity {
                                                 Intent intent = new Intent(getBaseContext(), MainActivity.class);
                                                 startActivity(intent);
                                             } else if (roleSelected.equals("Inventory Manager")) {
-                                                Intent intent = new Intent(getBaseContext(), inventory.class);
+                                                Intent intent = new Intent(getBaseContext(), inventory_manager_main_page.class);
                                                 startActivity(intent);
                                             } else if (roleSelected.equals("Hall Manager")) {
+                                                Intent intent = new Intent(getBaseContext(),Hall_Manager_Main.class);
+                                                startActivity(intent);
 
                                             } else if (roleSelected.equals("Kitchen Manager")) {
                                                 Intent intent = new Intent(getBaseContext(), kitchenManagerMain.class);

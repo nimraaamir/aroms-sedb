@@ -100,7 +100,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/add_inventory_threshold" />
 
             <EditText
-                android:id="@+id/add_user_password"
+                android:id="@+id/adi_quantity"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_marginStart="62dp"
@@ -129,7 +129,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/add_user_password" />
+                app:layout_constraintTop_toBottomOf="@+id/adi_quantity" />
 
             <!--<CheckBox-->
                 <!--android:id="@+id/add_user_admin"-->
