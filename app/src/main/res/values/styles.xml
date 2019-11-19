@@ -26,6 +26,12 @@
         <item name="android:textColor">#FFFFFF</item>
     </style>
 
+    <style name="AppTheme.TextView2" parent="Widget.AppCompat.TextView">
+        <item name="android:textSize">25sp</item>
+        <item name="android:fontFamily">@font/poppins</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+
     <style name="AppTheme.Spinner" parent="Widget.AppCompat.DropDownItem.Spinner">
         <item name="android:textSize">15sp</item>
         <item name="android:fontFamily">@font/poppins</item>
