@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ProgressBar;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -55,6 +56,7 @@ public class Login extends AppCompatActivity {
 
 
     private void loginAuthenticate() {
+        ((ProgressBar)findViewById(R.id.progressBar)).setVisibility(View.VISIBLE);
         String emailTxt = email.getText().toString();
         String passwordTxt = password.getText().toString();
         boolean isFill = false;
@@ -92,6 +94,7 @@ public class Login extends AppCompatActivity {
                                         String role = user.getRole();
                                         String roleSelected = ((Spinner) findViewById(R.id.dropdown)).getSelectedItem().toString();
                                         if (role.equals(roleSelected)) {
+                                            ((ProgressBar)findViewById(R.id.progressBar)).setVisibility(View.INVISIBLE);
                                             Toast.makeText(Login.this, "Login Successful",
                                                     Toast.LENGTH_LONG).show();
                                             if (roleSelected.equals("Admin")) {
@@ -115,6 +118,7 @@ public class Login extends AppCompatActivity {
                                                 startActivity(intent);
                                             }
                                         } else {
+                                            ((ProgressBar)findViewById(R.id.progressBar)).setVisibility(View.INVISIBLE);
                                             Toast.makeText(Login.this, "Login Failed",
                                                     Toast.LENGTH_LONG).show();
                                         }
@@ -127,6 +131,7 @@ public class Login extends AppCompatActivity {
                                 });
                                 // ...
                             } else {
+                                ((ProgressBar)findViewById(R.id.progressBar)).setVisibility(View.INVISIBLE);
                                 Toast.makeText(Login.this, "No Login Found",
                                         Toast.LENGTH_LONG).show();
                             }

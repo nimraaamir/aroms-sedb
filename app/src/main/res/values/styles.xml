@@ -20,6 +20,10 @@
         <item name="android:textSize">15dp</item>
     </style>
 
+    <style name="AppTheme.WhiteAccent">
+        <item name="colorAccent">@color/white</item> <!-- Whatever color you want-->
+    </style>
+
     <style name="AppTheme.TextView" parent="Widget.AppCompat.TextView">
         <item name="android:textSize">15sp</item>
         <item name="android:fontFamily">@font/poppins</item>
