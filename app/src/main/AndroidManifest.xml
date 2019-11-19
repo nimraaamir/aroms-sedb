@@ -52,8 +52,7 @@
         <activity android:name=".View_tables" />
         <activity android:name=".Hall_Manager_Main">
         </activity>
-     
->>>>>>> development
+        
 
         <meta-data
             android:name="preloaded_fonts"
