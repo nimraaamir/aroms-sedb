@@ -10,7 +10,7 @@ public class kitchenManagerCancel extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //setContentView(R.layout.activity_cancelOrder_kitchenmanager);
+        //setContentView(R.layout.activity_cancelorder_kitchenmanager);
 
     }
 
