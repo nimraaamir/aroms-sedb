@@ -138,5 +138,8 @@ public class Login extends AppCompatActivity {
                         }
                     });
         }
+        else {
+            ((ProgressBar)findViewById(R.id.progressBar)).setVisibility(View.INVISIBLE);
+        }
     }
 }
