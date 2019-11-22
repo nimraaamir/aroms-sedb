@@ -1,4 +1,4 @@
-package se.aroms;
+package se.aroms.DevelopersDotCo;
 
 import android.content.Context;
 import android.content.Intent;
@@ -9,17 +9,16 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import java.util.ArrayList;
 import java.util.List;
 
-import se.aroms.MyViewHolder;
+import se.aroms.Devdroids.Order;
 
 public class CustomRecyclerView extends RecyclerView.Adapter<MyViewHolder> {
 
-    private List<Orders> ordersList;
+    private List<Order> ordersList;
     private int itemLayout;
     private Context mContext;
-    public CustomRecyclerView(List<Orders> items, int itemLayout,Context context) {
+    public CustomRecyclerView(List<Order> items, int itemLayout,Context context) {
         this.ordersList = items;
         this.itemLayout = itemLayout;
         this.mContext = context;
@@ -40,13 +39,19 @@ public class CustomRecyclerView extends RecyclerView.Adapter<MyViewHolder> {
     @Override
     public void onBindViewHolder(@NonNull final MyViewHolder holder, final int position) {
         if(ordersList != null && holder != null){
+            final Order clickedOrder = getItem(position);
             //bind views here like text views and image views.
-            holder.OrderNumber.setText("Order Number " + (position+1));
+            holder.OrderNumber.setText("Order # " + (position+1));
+            if(clickedOrder.getPriority().equals("")){
+                holder.Priority.setText("Normal");
+            }
+            else{
+                holder.Priority.setText(clickedOrder.getPriority());
+            }
             holder.Specialize.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Orders clickedOrder = getItem(position);
-                    Intent intent = new Intent(mContext,SpecializeOrder.class);
+                    Intent intent = new Intent(mContext, SpecializeOrder.class);
                     intent.putExtra("order",clickedOrder);
                     intent.putExtra("index",position);
                     mContext.startActivity(intent);
@@ -62,10 +67,10 @@ public class CustomRecyclerView extends RecyclerView.Adapter<MyViewHolder> {
         else
             return 0;
     }
-    public void setItems(List<Orders> c){
+    public void setItems(List<Order> c){
         ordersList = c;
     }
-    public Orders getItem(int index){
+    public Order getItem(int index){
         return ordersList.get(index);
     }
 

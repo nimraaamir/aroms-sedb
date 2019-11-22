@@ -1,6 +1,8 @@
 package se.aroms.Devdroids;
 
-public class items {
+import java.io.Serializable;
+
+public class items implements Serializable {
     private String ItemID;
     private String size;
     private Double price;
@@ -11,6 +13,13 @@ public class items {
         this.size = size;
         this.price = price;
         this.incured_price = incured_price;
+    }
+    public items(){}
+    public items(items i) {
+        this.ItemID = i.ItemID;
+        this.incured_price = i.incured_price;
+        this.price = i.price;
+        this.size = i.size;
     }
 
     public String getItemID() {

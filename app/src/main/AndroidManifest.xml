@@ -9,7 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".SpecializeOrder"></activity>
+        <activity android:name=".DevelopersDotCo.SpecializeOrder"></activity>
         <activity android:name=".SalesAndReport"></activity>
 
         <activity android:name=".assign_role"></activity>

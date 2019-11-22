@@ -1,10 +1,6 @@
 package se.aroms;
 
-import android.content.Intent;
 import android.os.Bundle;
-import android.view.GestureDetector;
-import android.view.MotionEvent;
-import android.view.View;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -12,28 +8,48 @@ import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.google.firestore.v1.StructuredQuery;
+
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
+import se.aroms.Devdroids.Order;
+import se.aroms.DevelopersDotCo.CustomRecyclerView;
+
 public class kitchenManagerMain extends AppCompatActivity {
-    //Get orders from Firebase. Currently Using hard coded Data for my own purposes.
-    RecyclerView recyclerView;
-    CustomRecyclerView adapter;
+    private RecyclerView recyclerView;
+    private CustomRecyclerView adapter;
+    private DatabaseReference menuDB;
+    private ArrayList<Order> orders;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_kitchenmanager);
 
-        //Hard coded data. just get orders from firebase databse ...no need for dishes.
-        Dishes dish = new Dishes(1,"Biryani","!0 min","300 Rs");
-        ArrayList<Orders> orders = new ArrayList<>();
-        Orders order = new Orders();
-        order.addDishes(dish);
-        orders.add(order);
-        orders.add(order);
-        orders.add(order);
-        //Hard Coded end
+
+        orders = new ArrayList<>();
+        menuDB= FirebaseDatabase.getInstance().getReference().child("Orders");
+        menuDB.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                orders.clear();
+                for (DataSnapshot postSnapshot : dataSnapshot.getChildren()) {
+                    orders.add(postSnapshot.getValue(Order.class));
+                }
+                adapter.notifyDataSetChanged();
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+
+
         adapter = new CustomRecyclerView(orders,R.layout.kitchen_manager_order_row,this);
         recyclerView = (RecyclerView) findViewById(R.id.OrderDisplay);
         recyclerView.setAdapter(adapter);
