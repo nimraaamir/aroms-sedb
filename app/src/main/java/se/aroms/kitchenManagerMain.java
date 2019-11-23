@@ -18,12 +18,12 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 
 import se.aroms.Devdroids.Order;
-import se.aroms.DevelopersDotCo.CustomRecyclerView;
+import se.aroms.DevelopersDotCo.CustomRecyclerViewOrder;
 
 public class kitchenManagerMain extends AppCompatActivity {
     private RecyclerView recyclerView;
-    private CustomRecyclerView adapter;
-    private DatabaseReference menuDB;
+    private CustomRecyclerViewOrder adapter;
+    private DatabaseReference DB;
     private ArrayList<Order> orders;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,8 +32,8 @@ public class kitchenManagerMain extends AppCompatActivity {
 
 
         orders = new ArrayList<>();
-        menuDB= FirebaseDatabase.getInstance().getReference().child("Orders");
-        menuDB.addValueEventListener(new ValueEventListener() {
+        DB= FirebaseDatabase.getInstance().getReference().child("Orders");
+        DB.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 orders.clear();
@@ -50,7 +50,7 @@ public class kitchenManagerMain extends AppCompatActivity {
         });
 
 
-        adapter = new CustomRecyclerView(orders,R.layout.kitchen_manager_order_row,this);
+        adapter = new CustomRecyclerViewOrder(orders,R.layout.kitchen_manager_order_row,this);
         recyclerView = (RecyclerView) findViewById(R.id.OrderDisplay);
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));

@@ -113,19 +113,6 @@
             android:text="MintMargarita" />
     </RadioGroup>
 
-    <Button
-        android:id="@+id/Confirm"
-        style="@style/AppTheme.Button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="192dp"
-        android:background="@color/cast_expanded_controller_ad_label_background_color"
-        android:text="Confirm"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/priority" />
-
     <Switch
         android:id="@+id/priority"
         android:layout_width="wrap_content"
@@ -136,6 +123,18 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/radioGroup"
-        app:layout_constraintVertical_bias="0.43" />
+        app:layout_constraintVertical_bias="1.0" />
+
+    <Button
+        android:id="@+id/Confirm"
+        style="@style/AppTheme.Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/cast_expanded_controller_ad_label_background_color"
+        android:text="Confirm"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/priority" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

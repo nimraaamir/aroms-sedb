@@ -9,14 +9,14 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import se.aroms.R;
 
-public class MyViewHolder extends RecyclerView.ViewHolder {
+public class MyViewHolderOrder extends RecyclerView.ViewHolder {
 
     public Button Specialize;
     public TextView Priority;
     public TextView OrderNumber;
 
 
-    public MyViewHolder(View view){
+    public MyViewHolderOrder(View view){
         super(view);
         Specialize = (Button) view.findViewById(R.id.SpecializeOrder);
         Priority = (TextView) view.findViewById(R.id.Priority);

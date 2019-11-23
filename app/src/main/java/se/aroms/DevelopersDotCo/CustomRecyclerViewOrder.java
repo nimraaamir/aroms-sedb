@@ -13,19 +13,19 @@ import java.util.List;
 
 import se.aroms.Devdroids.Order;
 
-public class CustomRecyclerView extends RecyclerView.Adapter<MyViewHolder> {
+public class CustomRecyclerViewOrder extends RecyclerView.Adapter<MyViewHolderOrder> {
 
     private List<Order> ordersList;
     private int itemLayout;
     private Context mContext;
-    public CustomRecyclerView(List<Order> items, int itemLayout,Context context) {
+    public CustomRecyclerViewOrder(List<Order> items, int itemLayout, Context context) {
         this.ordersList = items;
         this.itemLayout = itemLayout;
         this.mContext = context;
     }
     @NonNull
     @Override
-    public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public MyViewHolderOrder onCreateViewHolder(ViewGroup parent, int viewType) {
         Context context = parent.getContext();
         LayoutInflater inflater = LayoutInflater.from(context);
 
@@ -33,11 +33,11 @@ public class CustomRecyclerView extends RecyclerView.Adapter<MyViewHolder> {
         View v = inflater.inflate(itemLayout, parent, false);
 
         // Return a new holder instance
-        return new MyViewHolder(v);
+        return new MyViewHolderOrder(v);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull final MyViewHolder holder, final int position) {
+    public void onBindViewHolder(@NonNull final MyViewHolderOrder holder, final int position) {
         if(ordersList != null && holder != null){
             final Order clickedOrder = getItem(position);
             //bind views here like text views and image views.
