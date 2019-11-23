@@ -44,8 +44,19 @@ public class CustomRecyclerViewDishes extends RecyclerView.Adapter<MyViewHolderD
         if(dishesList != null && holder != null){
             final Dishes clickedOrder = getItem(position);
             //bind views here like text views and image views.
-            holder.Name.setText("(" +(position+1) + ")  " +clickedOrder.getName());
-            holder.Price.setText(Math.round(orderItems.getOrderItems().get(position).getPrice())+ " Rs");
+            holder.Name.setText((position+1) +" "+ clickedOrder.getName());
+            if(orderItems.getOrderItems().get(position).getStatus() == 0){
+                holder.Price.setText("In Queue");
+            }
+            else if(orderItems.getOrderItems().get(position).getStatus() == 1){
+                holder.Price.setText("Cooking");
+            }
+            else if(orderItems.getOrderItems().get(position).getStatus() == 2){
+                holder.Price.setText("Served");
+            }
+            else if(orderItems.getOrderItems().get(position).getStatus() == 3){
+                holder.Price.setText("Re-Cooking");
+            }
             holder.Time.setText(clickedOrder.getTime()+" mins");
         }
     }

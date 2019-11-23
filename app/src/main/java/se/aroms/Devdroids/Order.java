@@ -10,13 +10,25 @@ public class Order implements Serializable {
     private String orderId;//unique order if
     private String uid;//table no
     private String priority;
+    private Long status;
+    private String complimentaryDish;
 
-    public Order(Date orderTIme, List<items> orderItems, String orderId, String uid) {
+    public Long getStatus() {
+        return status;
+    }
+
+    public void setStatus(Long status) {
+        this.status = status;
+    }
+
+    public Order(Date orderTIme, List<items> orderItems, String orderId, String uid, Long status,String complimentaryDish) {
         this.orderTIme = orderTIme;
         this.orderItems = orderItems;
         this.orderId = orderId;
         this.uid = uid;
         this.priority = "Normal";
+        this.status = status;
+        this.complimentaryDish = complimentaryDish;
     }
     public Order(Order order){
         this.orderId = order.orderId;
@@ -24,6 +36,16 @@ public class Order implements Serializable {
         this.uid = order.uid;
         this.orderTIme = order.orderTIme;
         this.priority = "Normal";
+        this.status = order.status;
+        this.complimentaryDish = order.complimentaryDish;
+    }
+
+    public String getComplimentaryDish() {
+        return complimentaryDish;
+    }
+
+    public void setComplimentaryDish(String complimentaryDish) {
+        this.complimentaryDish = complimentaryDish;
     }
 
     public String getPriority() {

@@ -32,7 +32,7 @@ public class kitchenManagerMain extends AppCompatActivity {
 
 
         orders = new ArrayList<>();
-        DB= FirebaseDatabase.getInstance().getReference().child("Orders");
+        DB= FirebaseDatabase.getInstance().getReference().child("Orders Queue");
         DB.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
