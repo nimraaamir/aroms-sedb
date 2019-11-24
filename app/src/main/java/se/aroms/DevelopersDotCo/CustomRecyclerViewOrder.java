@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -66,10 +67,18 @@ public class CustomRecyclerViewOrder extends RecyclerView.Adapter<MyViewHolderOr
             holder.Specialize.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Intent intent = new Intent(mContext, SpecializeOrder.class);
-                    intent.putExtra("order",clickedOrder);
-                    intent.putExtra("index",position);
-                    mContext.startActivity(intent);
+                    if(!(holder.status.getText().equals("Status: Re-Cooking"))){
+                        Intent intent = new Intent(mContext, SpecializeOrder.class);
+                        intent.putExtra("order",clickedOrder);
+                        intent.putExtra("index",position);
+                        mContext.startActivity(intent);
+                    }
+                    else{
+                        Toast.makeText(mContext, "Order already Specialized!",
+                                Toast.LENGTH_LONG).show();
+                        holder.Specialize.setVisibility(View.GONE);
+                    }
+
                 }
             });
         }
