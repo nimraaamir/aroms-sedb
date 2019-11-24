@@ -1,6 +1,7 @@
 package se.aroms;
 
 import android.os.Bundle;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -29,7 +30,6 @@ public class kitchenManagerMain extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_kitchenmanager);
-
 
         orders = new ArrayList<>();
         DB= FirebaseDatabase.getInstance().getReference().child("Orders Queue");

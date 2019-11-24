@@ -48,6 +48,21 @@ public class CustomRecyclerViewOrder extends RecyclerView.Adapter<MyViewHolderOr
             else{
                 holder.Priority.setText(clickedOrder.getPriority());
             }
+            if(clickedOrder.getStatus() == 0){
+                holder.status.setText("Status: In Queue");
+            }
+            else if(clickedOrder.getStatus() == 1){
+                holder.status.setText("Status: Cooking");
+            }
+            else if(clickedOrder.getStatus() == 2){
+                holder.status.setText("Status: Served");
+            }
+            else if(clickedOrder.getStatus() == 3){
+                holder.status.setText("Status: Re-Cooking");
+            }
+            if (clickedOrder.getComplimentaryDish() != null || !(clickedOrder.getComplimentaryDish().equals("") || clickedOrder.getComplimentaryDish().equals("None"))){
+                holder.complimentaryDish.setText("Complimentary Dish: "+clickedOrder.getComplimentaryDish());
+            }
             holder.Specialize.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {

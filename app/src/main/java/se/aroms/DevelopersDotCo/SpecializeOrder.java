@@ -14,6 +14,7 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Switch;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.gms.common.util.Base64Utils;
 import com.google.firebase.database.DataSnapshot;
@@ -27,6 +28,8 @@ import java.util.ArrayList;
 import se.aroms.Devdroids.Dishes;
 import se.aroms.Devdroids.Order;
 import se.aroms.R;
+import se.aroms.inventory_item;
+
 
 public class SpecializeOrder extends AppCompatActivity {
 
@@ -34,19 +37,41 @@ public class SpecializeOrder extends AppCompatActivity {
     private CustomRecyclerViewDishes adapter;
     private DatabaseReference DB;
     private ArrayList<Dishes> dishes;
+    private ArrayList<inventory_item> inventory;
     private int orderNo;
     private Order order;
     private Switch priority;
     private RadioGroup complimentaryDishes;
     private Button confirmBtn;
+    private TextView complimentaryDish;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_specialize_order);
+        inventory = new ArrayList<>();
+        DB = FirebaseDatabase.getInstance().getReference().child("Inventory");
+        DB.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                inventory.clear();
+                for (DataSnapshot postSnapshot : dataSnapshot.getChildren()) {
+                    inventory.add(postSnapshot.getValue(inventory_item.class));
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
         order = (Order)getIntent().getSerializableExtra("order");
         orderNo = getIntent().getIntExtra("index",0);
         priority = (Switch) findViewById(R.id.priority);
         complimentaryDishes = (RadioGroup) findViewById(R.id.radioGroup);
+        complimentaryDish = (TextView) findViewById(R.id.complimentaryDishOnOrder);
+        if (order.getComplimentaryDish() != null || !(order.getComplimentaryDish().equals("") || order.getComplimentaryDish().equals("None"))){
+            complimentaryDish.setText(order.getComplimentaryDish());
+        }
         confirmBtn = (Button) findViewById(R.id.Confirm);
         confirmBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -66,15 +91,26 @@ public class SpecializeOrder extends AppCompatActivity {
                 {
                     int selectedBtnId = complimentaryDishes.getCheckedRadioButtonId();
                     RadioButton selectedBtn = (RadioButton) findViewById(selectedBtnId);
-                    order.setComplimentaryDish((String) selectedBtn.getText());
+                    if(checkInventoryForComplimentaryDish( (String) selectedBtn.getText())){
+                        order.setComplimentaryDish((String) selectedBtn.getText());
+                    }
+
+                    else{
+                        Toast.makeText(SpecializeOrder.this, "Item out of Stock",
+                                Toast.LENGTH_LONG).show();
+                        Toast.makeText(SpecializeOrder.this, "Only Priority & Status Changed",
+                                Toast.LENGTH_LONG).show();
+                    }
+
                 }
                 DB= FirebaseDatabase.getInstance().getReference().child("Orders Queue").child(order.getOrderId());
                 DB.setValue(order);
                 finish();
+
             }
         });
         TextView ordernumber = (TextView) findViewById(R.id.orderNumber);
-        ordernumber.setText("Order Number " + orderNo);
+        ordernumber.setText("Order Number " + (orderNo + 1));
         dishes = new ArrayList<>();
         dishes.clear();
         adapter = new CustomRecyclerViewDishes(dishes,order,R.layout.specialize_order_dish_row,this);
@@ -101,5 +137,35 @@ public class SpecializeOrder extends AppCompatActivity {
 
             }
         });
+    }
+    private boolean checkInventoryForComplimentaryDish(String dish){
+        for (int i = 0; i < inventory.size();i++){
+            if(dish.equals("Fries") && inventory.get(i).getName().equals("Potatoes") && Integer.parseInt(inventory.get(i).getQuantity()) > 0){
+                DB = FirebaseDatabase.getInstance().getReference().child("Inventory").child(inventory.get(i).getUid()).child("quantity");
+                DB.setValue(String.valueOf(Integer.parseInt(inventory.get(i).getQuantity())-1));
+                return true;
+            }
+            else if(dish.equals("Cold Drink") && inventory.get(i).getName().equals("Cold Drinks") && Integer.parseInt(inventory.get(i).getQuantity()) > 0){
+                DB = FirebaseDatabase.getInstance().getReference().child("Inventory").child(inventory.get(i).getUid()).child("quantity");
+                DB.setValue(String.valueOf(Integer.parseInt(inventory.get(i).getQuantity())-1));
+                return true;
+            }
+            else if(dish.equals("Onion Rings") && inventory.get(i).getName().equals("Onions") && Integer.parseInt(inventory.get(i).getQuantity()) > 0){
+                DB = FirebaseDatabase.getInstance().getReference().child("Inventory").child(inventory.get(i).getUid()).child("quantity");
+                DB.setValue(String.valueOf(Integer.parseInt(inventory.get(i).getQuantity())-1));
+                return true;
+            }
+            else if(dish.equals("Cheese Sticks") && inventory.get(i).getName().equals("Cheese") && Integer.parseInt(inventory.get(i).getQuantity()) > 0){
+                DB = FirebaseDatabase.getInstance().getReference().child("Inventory").child(inventory.get(i).getUid()).child("quantity");
+                DB.setValue(String.valueOf(Integer.parseInt(inventory.get(i).getQuantity())-1));
+                return true;
+            }
+            else if(dish.equals("Mint Margarita") && inventory.get(i).getName().equals("Mint") && Integer.parseInt(inventory.get(i).getQuantity()) > 0){
+                DB = FirebaseDatabase.getInstance().getReference().child("Inventory").child(inventory.get(i).getUid()).child("quantity");
+                DB.setValue(String.valueOf(Integer.parseInt(inventory.get(i).getQuantity())-1));
+                return true;
+            }
+        }
+        return false;
     }
 }
