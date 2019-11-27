@@ -6,9 +6,15 @@
     android:layout_height="match_parent"
     tools:context=".Devdroids.Dish_Details"
     android:orientation="vertical">
+    <include
+        android:id="@+id/toolbar_menudetail"
+        layout="@layout/toolbar_menudetails"
+        >
+    </include>
     <ScrollView
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -114,6 +120,7 @@
             android:inputType="number"
             android:singleLine="true"
             android:textSize="20sp"
+            android:id="@+id/dish_detail_quantity"
             android:text="1" />
     </LinearLayout>
     <Button
@@ -122,6 +129,7 @@
         android:textSize="20sp"
         android:text="Add to Cart"
         android:onClick="onClickCart"
+        android:id="@+id/addToCart"
         android:theme="@style/AppTheme.Button"
         />
         </LinearLayout>

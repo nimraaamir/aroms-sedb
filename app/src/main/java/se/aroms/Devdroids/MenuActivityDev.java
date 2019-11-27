@@ -4,8 +4,9 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.TextView;
 import android.widget.Toast;
-
+import android.view.View;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -34,6 +35,9 @@ public class MenuActivityDev extends AppCompatActivity implements adapter_for_di
     List<Ingredients> ingredients;
     FirebaseAuth auth;
     Context context;
+    DatabaseReference cartDB;
+    TextView orderNo;
+    List<Cart_item> CartItems;
     DatabaseReference menuDB;
     private RecyclerView dishes_rv;
     private RecyclerView.Adapter adapter_dishes;
@@ -49,20 +53,59 @@ public class MenuActivityDev extends AppCompatActivity implements adapter_for_di
 //        Intent intent=new Intent(MainActivity.this, Dishes.class);
 //        startActivity(intent);
         Items=new ArrayList<>();
+        CartItems=new ArrayList<>();
+        orderNo=findViewById(R.id.cartNo);
         context=this;
         menuDB= FirebaseDatabase.getInstance().getReference();
+        cartDB = FirebaseDatabase.getInstance().getReference().child("Cart");
         auth=FirebaseAuth.getInstance();
         /*List<items>dishesordered;
         dishesordered=new ArrayList<>();
-        dishesordered.add(new items("-Lts929T4YwIAXYnBAKO","Large",150.0,125.0));
-        dishesordered.add(new items("-Lts929T4YwIAXYnBAKO","Regular",100.0,80.0));
+        dishesordered.add(new items("-Lts929T4YwIAXYnBAKO","Large",150.0,120.0));
+        dishesordered.add(new items("-Lts929T4YwIAXYnBAKO","Regular",120.0,100.0));
+        //order_queue order=new order_queue(new Date(),dishesordered,"jnk",auth.getUid(),0);
+        DatabaseReference orderDB;
+        int day=1;
+        Date obj=new Date();
+        Toast.makeText(this,obj.toString(),Toast.LENGTH_LONG).show();
+        /*for(int i=0;i<100;i++) {
+
+            obj=new Date(obj.getTime()+(day*24*60*60*1000));
+            Order order = new Order(obj, dishesordered, "jnk", auth.getUid(),0);
+            orderDB = FirebaseDatabase.getInstance().getReference().child("Orders");
+            String key = orderDB.push().getKey();
+            order.setOrderId(key);
+            orderDB.child(key).setValue(order);
+            day+=5;
+        }
+        /*dishesordered.add(new items("-Lts929T4YwIAXYnBAKO","Regular",100.0,80.0));
         Order order=new Order(new Date(),dishesordered,"jnk",auth.getUid());
         DatabaseReference orderDB;
         orderDB=FirebaseDatabase.getInstance().getReference().child("Orders");
         String key=orderDB.push().getKey();
         order.setOrderId(key);
         orderDB.child(key).setValue(order);
-        */
+         DatabaseReference orderQueue=FirebaseDatabase.getInstance().getReference().child("Orders Queue");
+        final List<order_queue> Orders;
+        Orders=new ArrayList<>();
+        orderQueue.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                Orders.clear();
+                for (DataSnapshot postSnapshot : dataSnapshot.getChildren()) {
+                    Orders.add(postSnapshot.getValue(order_queue.class));
+
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+         */
+
+
         final DatabaseReference ref = FirebaseDatabase.getInstance().getReference().child("Menu");
         ref.addValueEventListener(new ValueEventListener() {
             @Override
@@ -151,7 +194,24 @@ public class MenuActivityDev extends AppCompatActivity implements adapter_for_di
 
             }
         });
+        cartDB.child(auth.getUid()).addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                if (dataSnapshot != null) {
+                    CartItems.clear();
+                    for (DataSnapshot postSnapshot : dataSnapshot.getChildren()) {
+                        CartItems.add(postSnapshot.getValue(Cart_item.class));
 
+                    }
+                    orderNo.setText(" " + CartItems.size());
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
         // adding code for dishes to show in recycler view
 
         //ArrayList<String> Donut_Jelly=new ArrayList<>();
@@ -183,4 +243,10 @@ public class MenuActivityDev extends AppCompatActivity implements adapter_for_di
         intent.putExtra("item",Items.get(position));
         startActivity(intent);
     }
+    public void onCartClick(View v)
+    {
+        Intent intent=new Intent(MenuActivityDev.this, Cart.class);
+        startActivity(intent);
+    }
+
 }

@@ -50,10 +50,11 @@
                     android:layout_height="wrap_content"
                     android:background="@drawable/round1"
                     android:layout_gravity="center">
+
                     <TextView
                         android:layout_width="16dp"
                         android:layout_height="16dp"
-                        android:id="@+id/cartNo1"
+                        android:id="@+id/cartNo"
                         android:text=" 0"
                         android:layout_gravity="center"
                         android:textColor="#ffff"
@@ -67,6 +68,7 @@
                     android:layout_height="wrap_content"
                     android:src="@drawable/cart"
                     android:id="@+id/cart_main"
+                    android:onClick="onCartClick"
 
                     />
             </LinearLayout>

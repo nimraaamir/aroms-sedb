@@ -19,13 +19,13 @@ public class Dishes implements Parcelable {
     private String time;
     private String type;
     private String uid;
-    private List<String> img_ids;
+    private String picture;
     private int availability;
     public Dishes()
     {
 
     }
-    public Dishes(String description, String large_price, String large_price_incurred, String name, String reg_price, String reg_price_incurred, String time, String type, String uid, List<String> img_ids,int availability) {
+    public Dishes(String description, String large_price, String large_price_incurred, String name, String reg_price, String reg_price_incurred, String time, String type, String uid,String picture,int availability) {
         this.description = description;
         this.large_price = large_price;
         this.large_price_incurred = large_price_incurred;
@@ -35,7 +35,7 @@ public class Dishes implements Parcelable {
         this.time = time;
         this.type = type;
         this.uid = uid;
-        this.img_ids = img_ids;
+        this.picture = picture;
         this.availability=availability;
     }
 
@@ -119,12 +119,12 @@ public class Dishes implements Parcelable {
         this.uid = uid;
     }
 
-    public List<String> getImg_ids() {
-        return img_ids;
+    public String getPicture() {
+        return picture;
     }
 
-    public void setImg_ids(List<String> img_ids) {
-        this.img_ids = img_ids;
+    public void setPicture(String picture) {
+        this.picture = picture;
     }
 
     @Override
@@ -143,8 +143,8 @@ public class Dishes implements Parcelable {
             dish.time=source.readString();
             dish.type=source.readString();
             dish.uid=source.readString();
-            dish.img_ids=new ArrayList<>();
-            source.readStringList(dish.img_ids);
+            dish.picture=source.readString();
+
             dish.availability=source.readInt();
 
             return dish;
@@ -166,7 +166,7 @@ public class Dishes implements Parcelable {
         dest.writeString(time);
         dest.writeString(type);
         dest.writeString(uid);
-        dest.writeStringList(img_ids);
+        dest.writeString(picture);
         dest.writeInt(availability);
     }
 }
