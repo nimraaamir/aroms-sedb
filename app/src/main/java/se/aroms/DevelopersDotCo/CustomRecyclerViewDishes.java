@@ -12,15 +12,15 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.List;
 
 import se.aroms.Devdroids.Dishes;
-import se.aroms.Devdroids.Order;
-import se.aroms.Devdroids.items;
+import se.aroms.Devdroids.order_queue;
+
 
 public class CustomRecyclerViewDishes extends RecyclerView.Adapter<MyViewHolderDishes> {
     private List<Dishes> dishesList;
     private int itemLayout;
     private Context mContext;
-    private Order orderItems;
-    public CustomRecyclerViewDishes(List<Dishes> items, Order orderItems, int itemLayout, Context context) {
+    private order_queue orderItems;
+    public CustomRecyclerViewDishes(List<Dishes> items, order_queue orderItems, int itemLayout, Context context) {
         this.dishesList = items;
         this.itemLayout = itemLayout;
         this.mContext = context;
@@ -45,16 +45,16 @@ public class CustomRecyclerViewDishes extends RecyclerView.Adapter<MyViewHolderD
             final Dishes clickedOrder = getItem(position);
             //bind views here like text views and image views.
             holder.Name.setText((position+1) +" "+ clickedOrder.getName());
-            if(orderItems.getOrderItems().get(position).getStatus() == 0){
+            if(orderItems.getOrderItems().get(position).getStatus().equals("0")){
                 holder.Price.setText("In Queue");
             }
-            else if(orderItems.getOrderItems().get(position).getStatus() == 1){
+            else if(orderItems.getOrderItems().get(position).getStatus().equals("1")){
                 holder.Price.setText("Cooking");
             }
-            else if(orderItems.getOrderItems().get(position).getStatus() == 2){
+            else if(orderItems.getOrderItems().get(position).getStatus().equals("2")){
                 holder.Price.setText("Served");
             }
-            else if(orderItems.getOrderItems().get(position).getStatus() == 3){
+            else if(orderItems.getOrderItems().get(position).getStatus().equals("3")){
                 holder.Price.setText("Re-Cooking");
             }
             holder.Time.setText(clickedOrder.getTime()+" mins");

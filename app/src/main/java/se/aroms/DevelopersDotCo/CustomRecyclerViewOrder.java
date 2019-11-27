@@ -12,14 +12,14 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.List;
 
-import se.aroms.Devdroids.Order;
+import se.aroms.Devdroids.order_queue;
 
 public class CustomRecyclerViewOrder extends RecyclerView.Adapter<MyViewHolderOrder> {
 
-    private List<Order> ordersList;
+    private List<order_queue> ordersList;
     private int itemLayout;
     private Context mContext;
-    public CustomRecyclerViewOrder(List<Order> items, int itemLayout, Context context) {
+    public CustomRecyclerViewOrder(List<order_queue> items, int itemLayout, Context context) {
         this.ordersList = items;
         this.itemLayout = itemLayout;
         this.mContext = context;
@@ -40,29 +40,37 @@ public class CustomRecyclerViewOrder extends RecyclerView.Adapter<MyViewHolderOr
     @Override
     public void onBindViewHolder(@NonNull final MyViewHolderOrder holder, final int position) {
         if(ordersList != null && holder != null){
-            final Order clickedOrder = getItem(position);
+            final order_queue clickedOrder = getItem(position);
             //bind views here like text views and image views.
             holder.OrderNumber.setText("Order # " + (position+1));
-            if(clickedOrder.getPriority().equals("")){
+            if(clickedOrder.getPriority() == null){
+                holder.Priority.setText("Normal");
+            }
+            else if(clickedOrder.getPriority().equals("") ){
                 holder.Priority.setText("Normal");
             }
             else{
                 holder.Priority.setText(clickedOrder.getPriority());
             }
-            if(clickedOrder.getStatus() == 0){
+            if(clickedOrder.getOrder_status().equals("0")){
                 holder.status.setText("Status: In Queue");
             }
-            else if(clickedOrder.getStatus() == 1){
+            else if(clickedOrder.getOrder_status().equals("1")){
                 holder.status.setText("Status: Cooking");
             }
-            else if(clickedOrder.getStatus() == 2){
+            else if(clickedOrder.getOrder_status().equals("2")){
                 holder.status.setText("Status: Served");
             }
-            else if(clickedOrder.getStatus() == 3){
+            else if(clickedOrder.getOrder_status().equals("3")){
                 holder.status.setText("Status: Re-Cooking");
             }
-            if (clickedOrder.getComplimentaryDish() != null || !(clickedOrder.getComplimentaryDish().equals("") || clickedOrder.getComplimentaryDish().equals("None"))){
-                holder.complimentaryDish.setText("Complimentary Dish: "+clickedOrder.getComplimentaryDish());
+            if(clickedOrder.getComplimentaryDish() != null){
+                if (!(clickedOrder.getComplimentaryDish().equals("") || clickedOrder.getComplimentaryDish().equals("None"))){
+                    holder.complimentaryDish.setText("Complimentary Dish: "+clickedOrder.getComplimentaryDish());
+                }
+            }
+            else{
+                holder.complimentaryDish.setText("Complimentary Dish: None");
             }
             holder.Specialize.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -91,10 +99,10 @@ public class CustomRecyclerViewOrder extends RecyclerView.Adapter<MyViewHolderOr
         else
             return 0;
     }
-    public void setItems(List<Order> c){
+    public void setItems(List<order_queue> c){
         ordersList = c;
     }
-    public Order getItem(int index){
+    public order_queue getItem(int index){
         return ordersList.get(index);
     }
 

@@ -18,14 +18,14 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
-import se.aroms.Devdroids.Order;
+import se.aroms.Devdroids.order_queue;
 import se.aroms.DevelopersDotCo.CustomRecyclerViewOrder;
 
 public class kitchenManagerMain extends AppCompatActivity {
     private RecyclerView recyclerView;
     private CustomRecyclerViewOrder adapter;
     private DatabaseReference DB;
-    private ArrayList<Order> orders;
+    private ArrayList<order_queue> orders;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,7 +38,7 @@ public class kitchenManagerMain extends AppCompatActivity {
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 orders.clear();
                 for (DataSnapshot postSnapshot : dataSnapshot.getChildren()) {
-                    orders.add(postSnapshot.getValue(Order.class));
+                    orders.add(postSnapshot.getValue(order_queue.class));
                 }
                 adapter.notifyDataSetChanged();
             }

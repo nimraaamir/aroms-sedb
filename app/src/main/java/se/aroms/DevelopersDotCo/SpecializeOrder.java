@@ -26,7 +26,7 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 
 import se.aroms.Devdroids.Dishes;
-import se.aroms.Devdroids.Order;
+import se.aroms.Devdroids.order_queue;
 import se.aroms.R;
 import se.aroms.inventory_item;
 
@@ -39,7 +39,7 @@ public class SpecializeOrder extends AppCompatActivity {
     private ArrayList<Dishes> dishes;
     private ArrayList<inventory_item> inventory;
     private int orderNo;
-    private Order order;
+    private order_queue order;
     private Switch priority;
     private RadioGroup complimentaryDishes;
     private Button confirmBtn;
@@ -64,13 +64,15 @@ public class SpecializeOrder extends AppCompatActivity {
 
             }
         });
-        order = (Order)getIntent().getSerializableExtra("order");
+        order = (order_queue) getIntent().getSerializableExtra("order");
         orderNo = getIntent().getIntExtra("index",0);
         priority = (Switch) findViewById(R.id.priority);
         complimentaryDishes = (RadioGroup) findViewById(R.id.radioGroup);
         complimentaryDish = (TextView) findViewById(R.id.complimentaryDishOnOrder);
-        if (order.getComplimentaryDish() != null || !(order.getComplimentaryDish().equals("") || order.getComplimentaryDish().equals("None"))){
-            complimentaryDish.setText(order.getComplimentaryDish());
+        if(order.getComplimentaryDish() != null){
+            if (!(order.getComplimentaryDish().equals("") || order.getComplimentaryDish().equals("None"))){
+                complimentaryDish.setText(order.getComplimentaryDish());
+            }
         }
         confirmBtn = (Button) findViewById(R.id.Confirm);
         confirmBtn.setOnClickListener(new View.OnClickListener() {
@@ -82,7 +84,7 @@ public class SpecializeOrder extends AppCompatActivity {
                 else{
                     order.setPriority("Normal");
                 }
-                order.setStatus(Long.valueOf(3));
+                order.setOrder_status("3");
                 if (complimentaryDishes.getCheckedRadioButtonId() == -1)
                 {
                     order.setComplimentaryDish("None");
