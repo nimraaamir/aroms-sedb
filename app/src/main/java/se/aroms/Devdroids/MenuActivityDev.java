@@ -42,7 +42,7 @@ public class MenuActivityDev extends AppCompatActivity implements adapter_for_di
     private RecyclerView dishes_rv;
     private RecyclerView.Adapter adapter_dishes;
     private  RecyclerView.LayoutManager layoutManager_dishes;
-    ArrayList<Dishes> example_list = new ArrayList<>();
+   // ArrayList<Dishes> example_list = new ArrayList<>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -59,10 +59,10 @@ public class MenuActivityDev extends AppCompatActivity implements adapter_for_di
         menuDB= FirebaseDatabase.getInstance().getReference();
         cartDB = FirebaseDatabase.getInstance().getReference().child("Cart");
         auth=FirebaseAuth.getInstance();
-        /*List<items>dishesordered;
+        /*List<orders_items>dishesordered;
         dishesordered=new ArrayList<>();
-        dishesordered.add(new items("-Lts929T4YwIAXYnBAKO","Large",150.0,120.0));
-        dishesordered.add(new items("-Lts929T4YwIAXYnBAKO","Regular",120.0,100.0));
+        dishesordered.add(new orders_items("-Lts929T4YwIAXYnBAKO","Large",150.0,120.0));
+        dishesordered.add(new orders_items("-Lts929T4YwIAXYnBAKO","Regular",120.0,100.0));
         //order_queue order=new order_queue(new Date(),dishesordered,"jnk",auth.getUid(),0);
         DatabaseReference orderDB;
         int day=1;
@@ -71,15 +71,15 @@ public class MenuActivityDev extends AppCompatActivity implements adapter_for_di
         /*for(int i=0;i<100;i++) {
 
             obj=new Date(obj.getTime()+(day*24*60*60*1000));
-            Order order = new Order(obj, dishesordered, "jnk", auth.getUid(),0);
+            Orders order = new Orders(obj, dishesordered, "jnk", auth.getUid(),0);
             orderDB = FirebaseDatabase.getInstance().getReference().child("Orders");
             String key = orderDB.push().getKey();
             order.setOrderId(key);
             orderDB.child(key).setValue(order);
             day+=5;
         }
-        /*dishesordered.add(new items("-Lts929T4YwIAXYnBAKO","Regular",100.0,80.0));
-        Order order=new Order(new Date(),dishesordered,"jnk",auth.getUid());
+        /*dishesordered.add(new orders_items("-Lts929T4YwIAXYnBAKO","Regular",100.0,80.0));
+        Orders order=new Orders(new Date(),dishesordered,"jnk",auth.getUid());
         DatabaseReference orderDB;
         orderDB=FirebaseDatabase.getInstance().getReference().child("Orders");
         String key=orderDB.push().getKey();

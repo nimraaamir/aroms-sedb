@@ -3,10 +3,10 @@ package se.aroms.Devdroids;
 
 
 public class Cart_item {
-    private Item_cart Items;
+    private cart_Items Items;
     private int quantity;
 
-    public Cart_item(Item_cart items, int quantity) {
+    public Cart_item(cart_Items items, int quantity) {
         Items = items;
         this.quantity = quantity;
     }
@@ -15,11 +15,11 @@ public class Cart_item {
     }
 
 
-    public Item_cart getItems() {
+    public cart_Items getItems() {
         return Items;
     }
 
-    public void setItems(Item_cart items) {
+    public void setItems(cart_Items items) {
         Items = items;
     }
 

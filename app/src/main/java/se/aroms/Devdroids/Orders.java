@@ -3,13 +3,13 @@ package se.aroms.Devdroids;
 import java.util.Date;
 import java.util.List;
 
-public class Order {
+public class Orders {
     private Date orderTIme;
-    private List<items> orderItems;
+    private List<orders_items> orderItems;
     private String orderId;//unique order if
     private String uid;//table no
     private int status; //paid or not paid
-    public Order(Date orderTIme, List<items> orderItems, String orderId, String uid,int status) {
+    public Orders(Date orderTIme, List<orders_items> orderItems, String orderId, String uid, int status) {
         this.orderTIme = orderTIme;
         this.orderItems = orderItems;
         this.orderId = orderId;
@@ -25,11 +25,11 @@ public class Order {
         this.orderTIme = orderTIme;
     }
 
-    public List<items> getOrderItems() {
+    public List<orders_items> getOrderItems() {
         return orderItems;
     }
 
-    public void setOrderItems(List<items> orderItems) {
+    public void setOrderItems(List<orders_items> orderItems) {
         this.orderItems = orderItems;
     }
 

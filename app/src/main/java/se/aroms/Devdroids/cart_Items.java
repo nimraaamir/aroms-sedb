@@ -1,6 +1,6 @@
 package se.aroms.Devdroids;
 
-public class Item_cart {
+public class cart_Items {
     private String ItemID;
     private String size;
     private String name;
@@ -8,7 +8,7 @@ public class Item_cart {
     private String picture;
     private String time;
 
-    public Item_cart(String itemID, String size, String name, String desp, String picture,String time) {
+    public cart_Items(String itemID, String size, String name, String desp, String picture, String time) {
         ItemID = itemID;
         this.size = size;
         this.name = name;
@@ -17,7 +17,7 @@ public class Item_cart {
         this.time=time;
     }
 
-    public Item_cart() {
+    public cart_Items() {
     }
 
     public String getItemID() {

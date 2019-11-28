@@ -131,7 +131,7 @@ public class Dish_Details extends AppCompatActivity {
             }
         }
         if (!found) {
-            Cart_item item = new Cart_item(new Item_cart(dishes.getUid(),size,dishes.getName(),dishes.getDescription(),dishes.getPicture(),dishes.getTime()),Integer.parseInt(quantity.getText().toString()));
+            Cart_item item = new Cart_item(new cart_Items(dishes.getUid(),size,dishes.getName(),dishes.getDescription(),dishes.getPicture(),dishes.getTime()),Integer.parseInt(quantity.getText().toString()));
             cartDB.child(auth.getUid()).child(dishes.getUid() + size).setValue(item);
             Toast.makeText(this, "Added", Toast.LENGTH_SHORT).show();
         }

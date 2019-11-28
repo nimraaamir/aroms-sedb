@@ -1,12 +1,12 @@
 package se.aroms.Devdroids;
 
-public class items {
+public class orders_items {
     private String ItemID;
     private String size;
     private Double price;
     private Double incured_price;
 
-    public items(String itemID, String size, Double price, Double incured_price) {
+    public orders_items(String itemID, String size, Double price, Double incured_price) {
         ItemID = itemID;
         this.size = size;
         this.price = price;

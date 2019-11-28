@@ -31,7 +31,7 @@ public class Cart extends AppCompatActivity implements adapter_for_cart.OnViewLi
     List<Cart_item> CartItems;
     private RecyclerView cart_rv;
     private RecyclerView.Adapter adapter_cart;
-    private  RecyclerView.LayoutManager layoutManager_dishes;
+    private  RecyclerView.LayoutManager layoutManager_cart;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -61,10 +61,10 @@ public class Cart extends AppCompatActivity implements adapter_for_cart.OnViewLi
         });
         cart_rv= findViewById(R.id.cart_recylcerview);
         cart_rv.setHasFixedSize(true);
-        layoutManager_dishes = new LinearLayoutManager(this);
+        layoutManager_cart = new LinearLayoutManager(this);
         adapter_cart= new adapter_for_cart(CartItems,this);
 
-        cart_rv.setLayoutManager(layoutManager_dishes);
+        cart_rv.setLayoutManager(layoutManager_cart);
         cart_rv.setAdapter(adapter_cart);
     }
 
@@ -80,11 +80,12 @@ public class Cart extends AppCompatActivity implements adapter_for_cart.OnViewLi
     }
     public void OnOrderClick (View view)
     {
-        List<items_queue> orderItems;
+        final List<order_queue_items> orderItems;
         orderItems=new ArrayList<>();
         for(int i=0;i<CartItems.size();i++)
         {
-            orderItems.add(new items_queue(CartItems.get(i).getItems().getItemID(),CartItems.get(i).getItems().getSize(),"0",CartItems.get(i).getItems().getTime(),0));
+            for(int j=0;j<CartItems.get(i).getQuantity();j++)
+            orderItems.add(new order_queue_items(CartItems.get(i).getItems().getItemID(),CartItems.get(i).getItems().getSize(),"0",CartItems.get(i).getItems().getTime(),0));
         }
         order_queue orderQueue=new order_queue(new Date(),orderItems,"hell",auth.getUid(),0);
         String key = orderDB.push().getKey();
@@ -92,7 +93,8 @@ public class Cart extends AppCompatActivity implements adapter_for_cart.OnViewLi
         orderDB.child(key).setValue(orderQueue).addOnSuccessListener(new OnSuccessListener<Void>() {
             @Override
             public void onSuccess(Void aVoid) {
-                Toast.makeText(context,"Order Placed",Toast.LENGTH_SHORT).show();
+                Toast.makeText(context,"Orders Placed",Toast.LENGTH_SHORT).show();
+                cartDB.child(auth.getUid()).removeValue();
             }
         });
 

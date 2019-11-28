@@ -5,7 +5,7 @@ import java.util.List;
 
 public class order_queue {
     private Date orderTIme;
-    private List<items_queue> orderItems;
+    private List<order_queue_items> orderItems;
     private String orderId;//unique order if
     private String uid;//table no
     private int order_status;// 0 in queue 1 cooking 2 cooked
@@ -13,7 +13,7 @@ public class order_queue {
     public order_queue() {
     }
 
-    public order_queue(Date orderTIme, List<items_queue> orderItems, String orderId, String uid, int order_status) {
+    public order_queue(Date orderTIme, List<order_queue_items> orderItems, String orderId, String uid, int order_status) {
         this.orderTIme = orderTIme;
         this.orderItems = orderItems;
         this.orderId = orderId;
@@ -29,11 +29,11 @@ public class order_queue {
         this.orderTIme = orderTIme;
     }
 
-    public List<items_queue> getOrderItems() {
+    public List<order_queue_items> getOrderItems() {
         return orderItems;
     }
 
-    public void setOrderItems(List<items_queue> orderItems) {
+    public void setOrderItems(List<order_queue_items> orderItems) {
         this.orderItems = orderItems;
     }
 
@@ -60,7 +60,7 @@ public class order_queue {
     public void setOrder_status(int order_status) {
         this.order_status = order_status;
     }
-    public void addItem(items_queue item)
+    public void addItem(order_queue_items item)
     {
         this.orderItems.add(item);
     }

@@ -1,15 +1,15 @@
 package se.aroms.Devdroids;
 
-public class items_queue {
+public class order_queue_items {
     private String ItemID;
     private String size;
     private String expected_time;//actual time for cooking
     private String required_time;// time required to start cooking in queue time
     private int status;
-    public items_queue() {
+    public order_queue_items() {
     }
 
-    public items_queue(String itemID, String size, String expected_time, String required_time,int status) {
+    public order_queue_items(String itemID, String size, String expected_time, String required_time, int status) {
         ItemID = itemID;
         this.size = size;
         this.expected_time = expected_time;
