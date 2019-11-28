@@ -75,18 +75,10 @@ public class CustomRecyclerViewOrder extends RecyclerView.Adapter<MyViewHolderOr
             holder.Specialize.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    if(!(holder.status.getText().equals("Status: Re-Cooking"))){
-                        Intent intent = new Intent(mContext, SpecializeOrder.class);
-                        intent.putExtra("order",clickedOrder);
-                        intent.putExtra("index",position);
-                        mContext.startActivity(intent);
-                    }
-                    else{
-                        Toast.makeText(mContext, "Order already Specialized!",
-                                Toast.LENGTH_LONG).show();
-                        holder.Specialize.setVisibility(View.GONE);
-                    }
-
+                    Intent intent = new Intent(mContext, SpecializeOrder.class);
+                    intent.putExtra("order",clickedOrder);
+                    intent.putExtra("index",position);
+                    mContext.startActivity(intent);
                 }
             });
         }

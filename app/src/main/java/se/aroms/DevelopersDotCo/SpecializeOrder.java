@@ -105,6 +105,9 @@ public class SpecializeOrder extends AppCompatActivity {
                     }
 
                 }
+                for (int i =0; i < adapter.ChangedStatusIndexes.size(); i++){
+                    order.getOrderItems().get(adapter.ChangedStatusIndexes.get(i)).setStatus("3");
+                }
                 DB= FirebaseDatabase.getInstance().getReference().child("Orders Queue").child(order.getOrderId());
                 DB.setValue(order);
                 finish();

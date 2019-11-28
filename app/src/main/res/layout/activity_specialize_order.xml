@@ -7,163 +7,180 @@
     android:scrollbars="vertical"
     tools:context=".DevelopersDotCo.SpecializeOrder">
 
-    <LinearLayout
-        android:id="@+id/linearLayout2"
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0">
+        app:layout_constraintTop_toTopOf="parent">
+
+        */ Add code here */
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        <LinearLayout
+            android:id="@+id/linearLayout2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0">
+
+            <TextView
+                android:id="@+id/orderNumber"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center_horizontal"
+                android:text="Order Number #"
+                android:textAlignment="gravity"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+                android:textColor="@color/cast_expanded_controller_ad_label_background_color" />
+
+            <TextView
+                android:id="@+id/Dishes"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center_horizontal"
+                android:text="Dishes"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+
+        </LinearLayout>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/RVCard"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="5dp"
+            app:cardElevation="10dp"
+            app:cardMaxElevation="10dp"
+            app:contentPadding="5dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout2"
+            app:layout_constraintVertical_bias="0.0">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/DishesRV"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </androidx.cardview.widget.CardView>
+
+        <LinearLayout
+            android:id="@+id/linearLayout4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toTopOf="@+id/textView10"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/RVCard">
+
+            <TextView
+                android:id="@+id/ComplimentaryDishesHeading"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:text="Complimentary Dishes"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+
+            <TextView
+                android:id="@+id/complimentaryDishOnOrder"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:text="None"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+        </LinearLayout>
 
         <TextView
-            android:id="@+id/orderNumber"
-            android:layout_width="match_parent"
+            android:id="@+id/textView10"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:gravity="center_horizontal"
-            android:text="Order Number #"
-            android:textAlignment="gravity"
-            android:textAppearance="@style/TextAppearance.AppCompat.Display2"
-            android:textColor="@color/cast_expanded_controller_ad_label_background_color" />
+            android:layout_marginBottom="328dp"
+            android:text="Select One Complimentary Dish"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.497"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout4" />
 
-        <TextView
-            android:id="@+id/Dishes"
-            android:layout_width="match_parent"
+        <RadioGroup
+            android:id="@+id/radioGroup"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:gravity="center_horizontal"
-            android:text="Dishes"
-            android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView10"
+            app:layout_constraintVertical_bias="0.06999999">
 
-    </LinearLayout>
+            <RadioButton
+                android:id="@+id/Fries"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Fries" />
 
-    <androidx.cardview.widget.CardView
-        android:id="@+id/RVCard"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:cardCornerRadius="5dp"
-        app:cardElevation="10dp"
-        app:cardMaxElevation="10dp"
-        app:contentPadding="5dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout2"
-        app:layout_constraintVertical_bias="0.0">
+            <RadioButton
+                android:id="@+id/ColdDrink"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Cold Drink" />
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/DishesRV"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
-    </androidx.cardview.widget.CardView>
+            <RadioButton
+                android:id="@+id/OnionRings"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Onion Rings" />
 
-    <LinearLayout
-        android:id="@+id/linearLayout4"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toTopOf="@+id/textView10"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/RVCard">
+            <RadioButton
+                android:id="@+id/CheeseSticks"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Cheese Sticks" />
 
-        <TextView
-            android:id="@+id/ComplimentaryDishesHeading"
-            android:layout_width="match_parent"
+            <RadioButton
+                android:id="@+id/MintMargarita"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Mint Margarita" />
+        </RadioGroup>
+
+        <Switch
+            android:id="@+id/priority"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:gravity="center_horizontal"
-            android:text="Complimentary Dishes"
-            android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+            android:switchTextAppearance="@style/TextAppearance.AppCompat.Body1"
+            android:text="Assign High Priority    "
+            app:layout_constraintBottom_toTopOf="@+id/Confirm"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/radioGroup"
+            app:layout_constraintVertical_bias="1.0" />
 
-        <TextView
-            android:id="@+id/complimentaryDishOnOrder"
-            android:layout_width="match_parent"
+        <Button
+            android:id="@+id/Confirm"
+            style="@style/AppTheme.Button"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:gravity="center_horizontal"
-            android:text="None"
-            android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
-    </LinearLayout>
+            android:background="@color/cast_expanded_controller_ad_label_background_color"
+            android:text="Confirm"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/priority" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <TextView
-        android:id="@+id/textView10"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="328dp"
-        android:text="Select One Complimentary Dish"
-        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout4" />
+    </ScrollView>
 
-    <RadioGroup
-        android:id="@+id/radioGroup"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView10"
-        app:layout_constraintVertical_bias="0.06999999">
 
-        <RadioButton
-            android:id="@+id/Fries"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Fries" />
-
-        <RadioButton
-            android:id="@+id/ColdDrink"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Cold Drink" />
-
-        <RadioButton
-            android:id="@+id/OnionRings"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Onion Rings" />
-
-        <RadioButton
-            android:id="@+id/CheeseSticks"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Cheese Sticks" />
-
-        <RadioButton
-            android:id="@+id/MintMargarita"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Mint Margarita" />
-    </RadioGroup>
-
-    <Switch
-        android:id="@+id/priority"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:switchTextAppearance="@style/TextAppearance.AppCompat.Body1"
-        android:text="Assign High Priority    "
-        app:layout_constraintBottom_toTopOf="@+id/Confirm"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/radioGroup"
-        app:layout_constraintVertical_bias="1.0" />
-
-    <Button
-        android:id="@+id/Confirm"
-        style="@style/AppTheme.Button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@color/cast_expanded_controller_ad_label_background_color"
-        android:text="Confirm"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/priority" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
