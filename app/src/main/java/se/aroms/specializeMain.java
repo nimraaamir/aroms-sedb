@@ -1,7 +1,6 @@
 package se.aroms;
 
 import android.os.Bundle;
-import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -21,7 +20,7 @@ import java.util.ArrayList;
 import se.aroms.Devdroids.order_queue;
 import se.aroms.DevelopersDotCo.CustomRecyclerViewOrder;
 
-public class kitchenManagerMain extends AppCompatActivity {
+public class specializeMain extends AppCompatActivity {
     private RecyclerView recyclerView;
     private CustomRecyclerViewOrder adapter;
     private DatabaseReference DB;
@@ -29,7 +28,7 @@ public class kitchenManagerMain extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_kitchenmanager);
+        setContentView(R.layout.activity_specialize_main);
 
         orders = new ArrayList<>();
         DB= FirebaseDatabase.getInstance().getReference().child("Orders Queue");

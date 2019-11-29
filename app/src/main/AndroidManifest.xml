@@ -27,7 +27,7 @@
         <activity android:name=".kitchenManagerStatus" />
         <activity android:name=".Devdroids.MenuActivityDev" />
         <activity android:name=".Devdroids.Cart" />
-        <activity android:name=".kitchenManagerMain" />
+        <activity android:name=".specializeMain" />
         <activity android:name=".Devdroids.Dish_Details" />
         <activity android:name=".Devdroids.MyOrders" />
         <activity android:name=".Dishes" />
