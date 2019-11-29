@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".add_user">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="36dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginEnd="8dp"
+                android:text="Add User (Signup)"
+                android:textSize="24sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <EditText
+                android:id="@+id/add_inventory_name"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginStart="59dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginEnd="59dp"
+                android:ems="10"
+                android:gravity="center_horizontal"
+                android:hint="Full Name"
+                android:inputType="textPersonName"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+            <EditText
+                android:id="@+id/add_inventory_quantity"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginStart="62dp"
+                android:layout_marginTop="32dp"
+                android:layout_marginEnd="59dp"
+                android:ems="10"
+                android:gravity="center_horizontal"
+                android:hint="CNIC"
+                android:inputType="number"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/add_inventory_name" />
+
+
+            <EditText
+                android:id="@+id/add_inventory_threshold"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginStart="62dp"
+                android:layout_marginTop="28dp"
+                android:layout_marginEnd="59dp"
+                android:ems="10"
+                android:gravity="center_horizontal"
+                android:hint="Telephone"
+                android:inputType="number"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/add_inventory_quantity" />
+
+            <EditText
+                android:id="@+id/add_user_email"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginStart="62dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginEnd="59dp"
+                android:ems="10"
+                android:gravity="center_horizontal"
+                android:hint="Email"
+                android:inputType="text"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/add_inventory_threshold" />
+
+            <EditText
+                android:id="@+id/adi_quantity"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginStart="62dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginEnd="59dp"
+                android:ems="10"
+                android:gravity="center_horizontal"
+                android:hint="Password"
+                android:inputType="textPassword"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/add_user_email" />
+
+            <EditText
+                android:id="@+id/add_user_dob"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginStart="62dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginEnd="59dp"
+                android:ems="10"
+                android:gravity="center_horizontal"
+                android:hint="DOB"
+                android:inputType="text"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/adi_quantity" />
+
+            <!--<CheckBox-->
+                <!--android:id="@+id/add_user_admin"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_marginStart="62dp"-->
+                <!--android:layout_marginTop="24dp"-->
+                <!--android:layout_marginEnd="59dp"-->
+                <!--android:ems="10"-->
+                <!--android:gravity="center_horizontal"-->
+                <!--android:text="Make Admin?"-->
+                <!--android:textSize="18sp"-->
+                <!--app:layout_constraintEnd_toEndOf="parent"-->
+                <!--app:layout_constraintHorizontal_bias="0.0"-->
+                <!--app:layout_constraintStart_toStartOf="parent"-->
+                <!--app:layout_constraintTop_toBottomOf="@+id/add_user_dob" />-->
+
+
+            <Spinner
+                android:id="@+id/add_user_role"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginStart="40dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginEnd="40dp"
+                android:entries="@array/roles_arr"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/add_user_email" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/add_inventory_btn"
+                    android:layout_width="250dp"
+                    android:layout_height="50dp"
+
+                    android:layout_marginLeft="40dp"
+                    android:fontFamily="@font/poppins"
+                    android:onClick="onClickBtn"
+                    android:text="Next"
+                    android:theme="@style/AppTheme.Button"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/edit_dish_spinner"
+                    app:layout_constraintVertical_bias="0.095" />
+
+                <ProgressBar
+                    android:id="@+id/add_user_progressBar"
+                    style="?android:attr/progressBarStyle"
+                    android:layout_width="66dp"
+                    android:visibility="invisible"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

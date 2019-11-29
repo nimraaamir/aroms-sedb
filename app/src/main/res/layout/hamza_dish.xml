@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="32dp"
+    android:elevation="32dp"
+    android:layout_marginBottom="8dp"
+    android:layout_marginTop="8dp"
+    >
+    <ProgressBar
+        android:id="@+id/row_progress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"/>
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="4dp">
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="wrap_content"
+            android:layout_height="200dp"
+            android:id="@+id/dish_img"
+            android:src="@drawable/salad_sig"
+            />
+        <TextView
+            android:fontFamily="@font/poppins"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/dish_title"
+            android:text="Chicken salad"
+            android:layout_gravity="center"
+            android:textSize="20sp"
+
+            />
+        <TextView
+            android:id="@+id/dish_cook_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cook time: 45 mints"
+            android:layout_gravity="center"
+            android:textSize="14sp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Price Small :500/kg"
+            android:layout_gravity="center"
+            android:textSize="14sp"
+            android:id="@+id/dish_reg_price"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Price Large :500/kg"
+            android:layout_gravity="center"
+            android:textSize="14sp"
+            android:id="@+id/dish_large_price"
+            />
+
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

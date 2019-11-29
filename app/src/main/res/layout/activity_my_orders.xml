@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Devdroids.MyOrders"
+    android:orientation="vertical">
+    <include
+        android:id="@+id/cart_toolbar"
+        layout="@layout/cart_toolbar">
+
+    </include>
+    <CheckBox
+        android:layout_below="@+id/cart_toolbar"
+        android:visibility="invisible"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:id="@+id/cart_all"/>
+    <view class="androidx.appcompat.app.AlertController$RecycleListView"
+        android:id="@+id/rv4"
+        android:layout_below="@+id/cart_all"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="16dp"
+
+        />
+    <TextView
+        android:layout_below="@+id/rv4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="48sp"
+        android:text="Empty Cart :("
+        android:gravity="center"
+        android:id="@+id/cart_empty"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true">
+        <include
+            android:id="@+id/cart_below_toolbar"
+            layout="@layout/cart_below_toolbar">
+        </include>
+    </LinearLayout>
+</RelativeLayout>
