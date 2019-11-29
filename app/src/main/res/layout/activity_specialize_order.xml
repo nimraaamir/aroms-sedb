@@ -162,7 +162,8 @@
                 android:id="@+id/CheeseSticks"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Cheese Sticks" />
+                android:text="Cheese Sticks"
+                android:textStyle="bold"/>
 
             <RadioButton
                 android:id="@+id/MintMargarita"
