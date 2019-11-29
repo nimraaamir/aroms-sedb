@@ -39,6 +39,8 @@
                 android:layout_weight="1"
                 android:gravity="center_horizontal"
                 android:text="Order Number #"
+                android:fontFamily="@font/poppins"
+                android:textStyle="bold"
                 android:textAlignment="gravity"
                 android:textAppearance="@style/TextAppearance.AppCompat.Display2"
                 android:textColor="@color/cast_expanded_controller_ad_label_background_color" />
@@ -50,6 +52,8 @@
                 android:layout_weight="1"
                 android:gravity="center_horizontal"
                 android:text="Dishes"
+                android:fontFamily="@font/poppins"
+                android:textStyle="bold"
                 android:textAppearance="@style/TextAppearance.AppCompat.Large" />
 
         </LinearLayout>
@@ -90,6 +94,8 @@
                 android:layout_height="wrap_content"
                 android:gravity="center_horizontal"
                 android:text="Complimentary Dishes"
+                android:fontFamily="@font/poppins"
+                android:textStyle="bold"
                 android:textAppearance="@style/TextAppearance.AppCompat.Large" />
 
             <TextView
@@ -98,6 +104,8 @@
                 android:layout_height="wrap_content"
                 android:gravity="center_horizontal"
                 android:text="None"
+                android:fontFamily="@font/poppins"
+                android:textStyle="bold"
                 android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
         </LinearLayout>
 
@@ -110,6 +118,8 @@
             android:textAppearance="@style/TextAppearance.AppCompat.Body2"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            android:fontFamily="@font/poppins"
+            android:textStyle="bold"
             app:layout_constraintHorizontal_bias="0.497"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/linearLayout4" />
@@ -128,19 +138,25 @@
                 android:id="@+id/Fries"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Fries" />
+                android:text="Fries"
+                android:fontFamily="@font/poppins"
+                android:textStyle="bold"/>
 
             <RadioButton
                 android:id="@+id/ColdDrink"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Cold Drink" />
+                android:text="Cold Drink"
+                android:fontFamily="@font/poppins"
+                android:textStyle="bold"/>
 
             <RadioButton
                 android:id="@+id/OnionRings"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Onion Rings" />
+                android:text="Onion Rings"
+                android:fontFamily="@font/poppins"
+                android:textStyle="bold"/>
 
             <RadioButton
                 android:id="@+id/CheeseSticks"
@@ -152,7 +168,9 @@
                 android:id="@+id/MintMargarita"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Mint Margarita" />
+                android:text="Mint Margarita"
+                android:fontFamily="@font/poppins"
+                android:textStyle="bold"/>
         </RadioGroup>
 
         <Switch
@@ -161,6 +179,8 @@
             android:layout_height="wrap_content"
             android:switchTextAppearance="@style/TextAppearance.AppCompat.Body1"
             android:text="Assign High Priority    "
+            android:fontFamily="@font/poppins"
+            android:textStyle="bold"
             app:layout_constraintBottom_toTopOf="@+id/Confirm"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -174,6 +194,8 @@
             android:layout_height="wrap_content"
             android:background="@color/cast_expanded_controller_ad_label_background_color"
             android:text="Confirm"
+            android:fontFamily="@font/poppins"
+            android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

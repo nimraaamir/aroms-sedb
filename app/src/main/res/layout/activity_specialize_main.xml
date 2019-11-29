@@ -19,6 +19,8 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:text="Specialize Orders"
+            android:fontFamily="@font/poppins"
+            android:textStyle="bold"
             android:textAppearance="@style/TextAppearance.AppCompat.Display2"
             android:textColor="@color/cast_expanded_controller_ad_label_background_color"
             android:textSize="40sp" />
@@ -29,46 +31,9 @@
             android:layout_marginTop="20dp">
 
 
-            <TextView
-                android:id="@+id/cookexpertise_kitchenmanager"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:text="Orders"
-                android:textColor="@color/black"
-                android:textSize="20sp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
 
-            <TextView
-                android:id="@+id/textView7"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:clickable="true"
-                android:onClick="kitchenManagerCancelOrderOnClick"
-                android:text="Prioritize"
-                android:textColor="@color/black"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@+id/cookexpertise_kitchenmanager"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
 
-            <TextView
-                android:id="@+id/textView8"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:clickable="true"
-                android:onClick="kitchenManagerCancelOrderOnClick"
-                android:text="Status"
-                android:textColor="@color/black"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/cookexpertise_kitchenmanager"
-                app:layout_constraintTop_toTopOf="parent" />
+
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

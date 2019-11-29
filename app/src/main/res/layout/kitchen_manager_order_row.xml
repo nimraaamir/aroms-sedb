@@ -41,6 +41,8 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:text="Order #"
+                        android:fontFamily="@font/poppins"
+                        android:textStyle="bold"
                         android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
                     <TextView
@@ -49,6 +51,8 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:text="Priority:"
+                        android:fontFamily="@font/poppins"
+                        android:textStyle="bold"
                         android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
 
                     <TextView
@@ -57,6 +61,8 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:text="Normal"
+                        android:fontFamily="@font/poppins"
+                        android:textStyle="bold"
                         android:textColor="@color/cast_expanded_controller_ad_label_background_color" />
 
                     <Button
@@ -67,6 +73,8 @@
                         android:background="@color/cast_expanded_controller_ad_label_background_color"
                         android:gravity="center_vertical"
                         android:text="Specialize"
+                        android:fontFamily="@font/poppins"
+                        android:textStyle="bold"
                         android:textAlignment="center"
                         android:textAppearance="@style/TextAppearance.AppCompat.Display1" />
 
@@ -84,6 +92,8 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:text="Status: "
+                        android:fontFamily="@font/poppins"
+                        android:textStyle="bold"
                         android:textColor="@color/cast_expanded_controller_ad_label_background_color" />
 
                     <TextView
@@ -92,6 +102,8 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:text="Complimentary Dish: "
+                        android:fontFamily="@font/poppins"
+                        android:textStyle="bold"
                         android:textColor="@color/cast_expanded_controller_ad_label_background_color" />
                 </LinearLayout>
             </LinearLayout>
