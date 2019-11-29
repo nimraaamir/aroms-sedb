@@ -252,9 +252,9 @@ public class MenuActivityDev extends AppCompatActivity implements adapter_for_di
 
     @Override
     public void onViewClick(int position) {
-        //Intent intent=new Intent(MenuActivityDev.this, Dish_Details.class);
-        Intent intent=new Intent(MenuActivityDev.this, MyOrders.class);
-        //intent.putExtra("item",Items.get(position));
+        Intent intent=new Intent(MenuActivityDev.this, Dish_Details.class);
+        //Intent intent=new Intent(MenuActivityDev.this, MyOrders.class);
+        intent.putExtra("item",Items.get(position));
         startActivity(intent);
 
     }

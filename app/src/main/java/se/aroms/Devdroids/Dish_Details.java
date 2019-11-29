@@ -222,20 +222,16 @@ public class Dish_Details extends AppCompatActivity {
             }
         }
         if (!found) {
-            int quan=Integer.parseInt(quantity.getText().toString());
-            if(quan>dishes.getMaxQuantity())
-            {
-                Toast.makeText(this, "Maximum quantity that can be ordered is "+dishes.getMaxQuantity(), Toast.LENGTH_SHORT).show();
+            int quan = Integer.parseInt(quantity.getText().toString());
+            if (quan > dishes.getMaxQuantity()) {
+                Toast.makeText(this, "Maximum quantity that can be ordered is " + dishes.getMaxQuantity(), Toast.LENGTH_SHORT).show();
                 quantity.setText("");
-                quantity.setText(quan+"");
-            }
-            else if(quan<=0)
-            {
+                quantity.setText(quan + "");
+            } else if (quan <= 0) {
                 Toast.makeText(this, "Quantity should be greater than 0", Toast.LENGTH_SHORT).show();
                 quantity.setText("");
-            }
-            else {
-                Cart_item item = new Cart_item(new cart_Items(dishes.getUid(), size, dishes.getName(), dishes.getDescription(), dishes.getPicture(), dishes.getTime()),quan);
+            } else {
+                Cart_item item = new Cart_item(new cart_Items(dishes.getUid(), size, dishes.getName(), dishes.getDescription(), dishes.getPicture(), dishes.getTime(), ""), quan, dishes.getMaxQuantity());
                 cartDB.child(auth.getUid()).child(dishes.getUid() + size).setValue(item);
                 updateInventory(quan);
 
@@ -247,23 +243,34 @@ public class Dish_Details extends AppCompatActivity {
         }
     }
     public void updateInventory(int quan){
+        List<Integer> changedindex;
+        changedindex=new ArrayList<>();
         for(int i=0;i<ingredients.size();i++)
         {
             for(int j=0;j<inventory_items.size();j++)
             {
-                if(ingredients.get(i).getId().compareTo(inventory_items.get(i).getUid())==0)
+                if(ingredients.get(i).getId().compareTo(inventory_items.get(j).getUid())==0)
                 {
                     int newQuantity=Integer.parseInt(inventory_items.get(j).getQuantity())-(Integer.parseInt(ingredients.get(i).getQuantity())*quan);
 
                     inventory_items.get(j).setQuantity(String.valueOf(newQuantity));
-                    InventoryDB.child(inventory_items.get(j).uid).setValue(inventory_items.get(j)).addOnSuccessListener(new OnSuccessListener<Void>() {
-                        @Override
-                        public void onSuccess(Void aVoid) {
-                            Toast.makeText(context, "Added", Toast.LENGTH_SHORT).show();
-                        }
-                    });
+                    changedindex.add(j);
                 }
             }
         }
+        for(int i=0;i<changedindex.size();i++){
+            InventoryDB.child(inventory_items.get(changedindex.get(i)).uid).setValue(inventory_items.get(changedindex.get(i))).addOnSuccessListener(new OnSuccessListener<Void>() {
+                @Override
+                public void onSuccess(Void aVoid) {
+
+                }
+            });
+
+        }
+        Toast.makeText(context, "Added", Toast.LENGTH_SHORT).show();
+    }
+    public void updateCartQuanitiy()
+    {
+
     }
 }

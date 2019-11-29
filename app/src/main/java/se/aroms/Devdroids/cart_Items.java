@@ -7,14 +7,16 @@ public class cart_Items {
     private String desp;
     private String picture;
     private String time;
+    private String qunatity;
 
-    public cart_Items(String itemID, String size, String name, String desp, String picture, String time) {
+    public cart_Items(String itemID, String size, String name, String desp, String picture, String time,String qunatity) {
         ItemID = itemID;
         this.size = size;
         this.name = name;
         this.desp = desp;
         this.picture = picture;
         this.time=time;
+        this.qunatity=qunatity;
     }
 
     public cart_Items() {
@@ -66,5 +68,13 @@ public class cart_Items {
 
     public void setTime(String time) {
         this.time = time;
+    }
+
+    public String getQunatity() {
+        return qunatity;
+    }
+
+    public void setQunatity(String qunatity) {
+        this.qunatity = qunatity;
     }
 }

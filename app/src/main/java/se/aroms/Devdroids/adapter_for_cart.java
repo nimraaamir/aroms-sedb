@@ -1,5 +1,7 @@
 package se.aroms.Devdroids;
 
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -22,6 +24,7 @@ import se.aroms.R;
 public class adapter_for_cart extends RecyclerView.Adapter<adapter_for_cart.view_holder> {
     private List<Cart_item> my_array_of_cart;
     private OnViewListener onViewListener;
+    private RecyclerView.ViewHolder viewHolder;
     public adapter_for_cart(List<Cart_item> cart_list, OnViewListener onViewListener){
         my_array_of_cart= cart_list;
         this.onViewListener=onViewListener;
@@ -32,12 +35,13 @@ public class adapter_for_cart extends RecyclerView.Adapter<adapter_for_cart.view
     public view_holder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.cart_row, parent, false);
         view_holder vh = new view_holder(v,onViewListener);
+        this.viewHolder=vh;
         return vh;
     }
 
     @Override
-    public void onBindViewHolder(@NonNull view_holder holder, int position) {
-        Cart_item current_item = my_array_of_cart.get(position);
+    public void onBindViewHolder(@NonNull final view_holder holder, int position) {
+        final Cart_item current_item = my_array_of_cart.get(position);
         final view_holder viewHolder = (view_holder) holder;
         if (current_item.getItems().getPicture() != null) {
             Picasso.get().load(current_item.getItems().getPicture()).fit().centerCrop().into(viewHolder.dish_image, new Callback() {
@@ -59,6 +63,24 @@ public class adapter_for_cart extends RecyclerView.Adapter<adapter_for_cart.view
         holder.dish_name.setText(current_item.getItems().getName());
         holder.dish_desp.setText(current_item.getItems().getDesp());
         holder.quantity.setText(""+current_item.getQuantity());
+        holder.quantityWarning.setText(current_item.getItems().getQunatity());
+        holder.quantity.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                if(s.toString().length()>0)
+                current_item.setLocalQuantity(Integer.parseInt(s.toString()));
+            }
+        });
     }
 
     @Override
@@ -73,9 +95,11 @@ public class adapter_for_cart extends RecyclerView.Adapter<adapter_for_cart.view
         public OnViewListener onViewListener;
         public TextView dish_desp;
         public Button delete;
+        public TextView quantityWarning;
         public EditText quantity;
         public view_holder(@NonNull View itemView,OnViewListener onViewListener) {
             super(itemView);
+            this.quantityWarning=itemView.findViewById(R.id.maxQuantityCart);
             this.dish_desp=itemView.findViewById(R.id.cart_dish_desp);
             this.dish_image=itemView.findViewById(R.id.cart_dish_img);
             this.dish_name=itemView.findViewById(R.id.cart_dish_title);
