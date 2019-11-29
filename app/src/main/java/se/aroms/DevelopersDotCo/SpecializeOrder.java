@@ -79,10 +79,10 @@ public class SpecializeOrder extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if(priority.isChecked()){
-                    order.setPriority("High");
+                    order.setPriority("1");
                 }
                 else{
-                    order.setPriority("Normal");
+                    order.setPriority("2");
                 }
                 order.setOrder_status("3");
                 if (complimentaryDishes.getCheckedRadioButtonId() == -1)

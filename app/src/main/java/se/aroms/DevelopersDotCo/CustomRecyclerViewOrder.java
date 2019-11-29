@@ -50,7 +50,10 @@ public class CustomRecyclerViewOrder extends RecyclerView.Adapter<MyViewHolderOr
                 holder.Priority.setText("Normal");
             }
             else{
-                holder.Priority.setText(clickedOrder.getPriority());
+                if (clickedOrder.getPriority().equals("1"))
+                    holder.Priority.setText("High");
+                else
+                    holder.Priority.setText("Normal");
             }
             if(clickedOrder.getOrder_status().equals("0")){
                 holder.status.setText("Status: In Queue");
