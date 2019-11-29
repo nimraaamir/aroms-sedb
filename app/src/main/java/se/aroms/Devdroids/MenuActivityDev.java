@@ -154,11 +154,13 @@ public class MenuActivityDev extends AppCompatActivity implements adapter_for_di
                         }
                         for(int i=0;i<Items.size();i++)
                         {
+                            int available_quantity=1000000;
                             int available=1;
                             for(int j=0;j<ingredients.size();j++)
                             {
                                 if(ingredients.get(j).getDishId().compareTo(Items.get(i).getUid())==0)
                                 {
+
                                     for(int k=0;k<inventory_items.size();k++)
                                     {
                                         if(ingredients.get(j).getId().compareTo(inventory_items.get(k).getUid())==0)
@@ -167,15 +169,26 @@ public class MenuActivityDev extends AppCompatActivity implements adapter_for_di
                                             String req_quantity=ingredients.get(j).getQuantity();
                                             int x=Integer.parseInt(req_quantity);
                                             int y=Integer.parseInt(current_quantity);
+                                            int temp=y/x;
+                                            if(temp<available_quantity){
+                                                available_quantity=temp;
+                                            }
                                             if(x>y)
                                             {
                                                 available=0;
+                                                break;
                                             }
                                         }
+
                                     }
+
+                                }
+                                if(available==0){
+                                    break;
                                 }
 
                             }
+                            Items.get(i).setMaxQuantity(available_quantity);
                             Items.get(i).setAvailability(available);
                         }
                         adapter_dishes.notifyDataSetChanged();
@@ -239,13 +252,16 @@ public class MenuActivityDev extends AppCompatActivity implements adapter_for_di
 
     @Override
     public void onViewClick(int position) {
-        Intent intent=new Intent(MenuActivityDev.this, Dish_Details.class);
-        intent.putExtra("item",Items.get(position));
+        //Intent intent=new Intent(MenuActivityDev.this, Dish_Details.class);
+        Intent intent=new Intent(MenuActivityDev.this, MyOrders.class);
+        //intent.putExtra("item",Items.get(position));
         startActivity(intent);
+
     }
     public void onCartClick(View v)
     {
         Intent intent=new Intent(MenuActivityDev.this, Cart.class);
+
         startActivity(intent);
     }
 

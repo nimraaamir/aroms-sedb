@@ -1,27 +1,48 @@
 package se.aroms.Devdroids;
 
-public class order_queue_items {
+import java.io.Serializable;
+
+public class order_queue_items implements Serializable {
     private String ItemID;
     private String size;
     private String expected_time;//actual time for cooking
     private String required_time;// time required to start cooking in queue time
-    private int status;
+    private String status;
+    private Double price;
+
+    public Double getPrice() {
+        return price;
+    }
+
+    public void setPrice(Double price) {
+        this.price = price;
+    }
+
     public order_queue_items() {
     }
 
-    public order_queue_items(String itemID, String size, String expected_time, String required_time, int status) {
-        ItemID = itemID;
+    public order_queue_items(String itemID, String size, String expected_time, String required_time, String status,Double price) {
+        this.ItemID = itemID;
         this.size = size;
         this.expected_time = expected_time;
         this.required_time = required_time;
         this.status=status;
+        this.price = price;
+    }
+    public order_queue_items(order_queue_items i){
+        this.expected_time = i.expected_time;
+        this.ItemID = i.ItemID;
+        this.price = i.price;
+        this.required_time = i.required_time;
+        this.size = i.size;
+        this.status = i.status;
     }
 
-    public int getStatus() {
+    public String getStatus() {
         return status;
     }
 
-    public void setStatus(int status) {
+    public void setStatus(String status) {
         this.status = status;
     }
 

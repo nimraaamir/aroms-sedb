@@ -85,9 +85,9 @@ public class Cart extends AppCompatActivity implements adapter_for_cart.OnViewLi
         for(int i=0;i<CartItems.size();i++)
         {
             for(int j=0;j<CartItems.get(i).getQuantity();j++)
-            orderItems.add(new order_queue_items(CartItems.get(i).getItems().getItemID(),CartItems.get(i).getItems().getSize(),"0",CartItems.get(i).getItems().getTime(),0));
+            orderItems.add(new order_queue_items(CartItems.get(i).getItems().getItemID(),CartItems.get(i).getItems().getSize(),"0",CartItems.get(i).getItems().getTime(),"0",50.0));
         }
-        order_queue orderQueue=new order_queue(new Date(),orderItems,"hell",auth.getUid(),0);
+        order_queue orderQueue=new order_queue(new Date(),orderItems,"hell",auth.getUid(),"0","normal","NONE");
         String key = orderDB.push().getKey();
         orderQueue.setOrderId(key);
         orderDB.child(key).setValue(orderQueue).addOnSuccessListener(new OnSuccessListener<Void>() {

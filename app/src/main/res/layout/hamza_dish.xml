@@ -3,60 +3,82 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    app:cardCornerRadius="32dp"
+    app:cardCornerRadius="15dp"
     android:elevation="32dp"
-    android:layout_marginBottom="8dp"
-    android:layout_marginTop="8dp"
+    android:layout_marginBottom="5dp"
+    android:layout_marginTop="5dp"
     >
     <ProgressBar
         android:id="@+id/row_progress"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"/>
+
     <LinearLayout
-        android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_margin="4dp">
-        <androidx.appcompat.widget.AppCompatImageView
-            android:layout_width="wrap_content"
-            android:layout_height="200dp"
-            android:id="@+id/dish_img"
-            android:src="@drawable/salad_sig"
-            />
-        <TextView
-            android:fontFamily="@font/poppins"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <androidx.cardview.widget.CardView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/dish_title"
-            android:text="Chicken salad"
             android:layout_gravity="center"
+            android:layout_marginTop="15dp"
+            app:cardCornerRadius="15dp">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/dish_img"
+                android:layout_width="350dp"
+                android:layout_height="200dp"
+                android:layout_gravity="center"
+                android:src="@drawable/salad_sig" />
+
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:id="@+id/dish_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="5dp"
+            android:fontFamily="@font/poppins"
+            android:text="Chicken salad"
+            android:textColor="@color/black"
             android:textSize="20sp"
+            android:textStyle="bold"
 
             />
+
         <TextView
             android:id="@+id/dish_cook_time"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
             android:text="Cook time: 45 mints"
-            android:layout_gravity="center"
-            android:textSize="14sp"/>
+            android:textColor="@color/black"
+            android:textSize="14sp" />
+
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Price Small :500/kg"
-            android:layout_gravity="center"
-            android:textSize="14sp"
             android:id="@+id/dish_reg_price"
-            />
-        <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Price Large :500/kg"
             android:layout_gravity="center"
+            android:text="Price Small :500/kg"
+            android:textColor="@color/black"
             android:textSize="14sp"
-            android:id="@+id/dish_large_price"
+
             />
+
+        <TextView
+            android:id="@+id/dish_large_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginBottom="20dp"
+            android:text="Price Large :500/kg"
+            android:textColor="@color/black"
+            android:textSize="14sp" />
 
     </LinearLayout>
 </androidx.cardview.widget.CardView>

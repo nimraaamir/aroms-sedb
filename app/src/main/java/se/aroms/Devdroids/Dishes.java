@@ -21,6 +21,7 @@ public class Dishes implements Parcelable {
     private String uid;
     private String picture;
     private int availability;
+    private int maxQuantity;
     public Dishes()
     {
 
@@ -37,6 +38,14 @@ public class Dishes implements Parcelable {
         this.uid = uid;
         this.picture = picture;
         this.availability=availability;
+    }
+
+    public int getMaxQuantity() {
+        return maxQuantity;
+    }
+
+    public void setMaxQuantity(int maxQuantity) {
+        this.maxQuantity = maxQuantity;
     }
 
     public String getDescription() {
